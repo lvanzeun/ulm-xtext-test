@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.ulm.xtext2.design.Activator"
+               id="ulm.xtext2.design"
+	       name="xtext2">
+    </component>
+  </extension>
+</plugin>

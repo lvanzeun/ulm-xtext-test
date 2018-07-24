@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="xtext2" version="12.0.0.2017041100">
+  <ownedViewpoints name="MetaUlmViewpoint" modelFileExtension="*.metaulm">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MetaulmDiagram" domainClass="ulmDsl2::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/xtext/xbase/Xtype#/"/>
+      <metamodel href="http://org.mycorp/ulm/metaulm/xtext/UlmDsl2#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="EntityEntityFeatureRelation" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.features.featureType.type.t.entityType">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EntityEntityExtendRelation" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.superType">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="EntityContainer" domainClass="ulmDsl2::Entity" childrenPresentation="List">
+          <subNodeMappings name="AttributeFeatureTypeNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ulmDsl2::AttributeFeatureType">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.attributeType.name" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Entities">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createDataEntity" label="Data Entity" containerMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="contexts.entities">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="instance.name" valueExpression="aql:'Entity'+container.contexts.entities->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="instance.type" valueExpression="'data'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createLookupEntity" label="Lookup Entity" containerMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="contexts.entities">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+container.contexts.entities->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="'lookup'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createStaticEntity" label="Static Entity" containerMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="contexts.entities">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+container.contexts.entities->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="'static'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relationships">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setSuperType" label="Extends" precondition="aql:preTarget.differs(preSource)" edgeMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="superType" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddEntityFeature" label="References" edgeMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityFeatureRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="features" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="ulm.xtext2.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

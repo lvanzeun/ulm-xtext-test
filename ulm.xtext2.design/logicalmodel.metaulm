@@ -1,0 +1,47 @@
+model simple_model {
+
+	context simple_context 1.2.3 {
+
+		attributes {
+			
+			attribute string attr1;
+		
+			attribute string attr2;
+		}
+		
+		lookups {
+			
+			lookup integer Lookup1 values {
+
+				( 1 'Simple description' ),
+				( 2 'Other' )
+			};
+		}
+		
+		entities {		
+			
+			entity Entity1  extends Entity2 { features {
+					
+					feature attribute attr1 mandatory;
+				}
+			}
+			entity Entity2 {
+				
+				features {
+					
+					feature entity Entity4 identifier as zeEntity;
+					
+					feature attribute attr1 as zeAttr1;
+				}
+			}
+			
+			entity Entity3 extends Entity2 {
+			
+			}
+			
+			entity Entity4 {
+			
+			}
+		}
+	}
+}
