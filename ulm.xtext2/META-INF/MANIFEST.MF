@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ulm.xtext2
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: ulm.xtext2; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.ulm.metaulm.xtext.formatting2,
+ org.ulm.metaulm.xtext.generator,
+ org.ulm.metaulm.xtext,
+ org.ulm.metaulm.xtext.parser.antlr,
+ org.ulm.metaulm.xtext.parser.antlr.internal,
+ org.ulm.metaulm.xtext.scoping,
+ org.ulm.metaulm.xtext.serializer,
+ org.ulm.metaulm.xtext.services,
+ org.ulm.metaulm.xtext.ulmDsl2,
+ org.ulm.metaulm.xtext.ulmDsl2.impl,
+ org.ulm.metaulm.xtext.ulmDsl2.util,
+ org.ulm.metaulm.xtext.validation
+Import-Package: org.apache.log4j
+Automatic-Module-Name: ulm.xtext2

@@ -1,0 +1,79 @@
+grammar org.ulm.metaulm.xtext.UlmDsl2 with org.eclipse.xtext.common.Terminals
+
+generate ulmDsl2 "http://org.mycorp/ulm/metaulm/xtext/UlmDsl2"
+
+Model:
+	'model' name=ID '{'
+	contexts+=Context*
+	'}';
+
+Context:
+	'context' name=ID version=Version '{'
+	('attributes' '{'
+	attributes+=Attribute*
+	'}')?
+	('lookups' '{'
+	lookups+=Lookup*
+	'}')?
+	('entities' '{'
+	entities+=Entity*
+	'}')?
+	'}';
+
+Version:
+	INT '.' INT '.' INT;
+
+Attribute:
+	'attribute' type=AttributeType name=ID (desc=STRING)? ';';
+
+AttributeType:
+	type=BasicType (array?='[' (length=INT)? ']')?;
+
+BasicType:
+	typeName=('string' | 'int' | 'decimal' | 'boolean' | 'date' | 'datetime' | 'timestamp');
+
+Entity:
+	type=('data' | 'static' | 'lookup')? 'entity' name=ID (desc=STRING)? ('extends' superType=[Entity])? '{'
+	('features' '{'
+	features+=Feature*
+	'}')?
+	'}';
+
+Feature:
+	featureType=FeatureTypeType
+	(mandatory?='mandatory')?
+	(identifier?='identifier')?
+	('as' alias=ID)?
+	';';
+
+FeatureTypeType:
+	type=FeatureType (array?='[' (length=INT)? ']')?;
+
+FeatureType:
+	'feature' t=(AttributeFeatureType | EntityFeatureType);
+
+AttributeFeatureType:
+	'attribute' attributeType=[Attribute];
+
+EntityFeatureType:
+	'entity' entityType=[Entity];
+	
+Lookup:
+	'lookup' (LookupInt | LookupString)
+;
+
+LookupInt:
+	'integer' name=ID (description=STRING)? 'values' '{' values+=LookupIntValue ( "," values+=LookupIntValue)* '}' ';' 
+;
+
+LookupString:
+	'string' name=ID (description=STRING)? 'values' '{' values+=LookupStringValue ( "," values+=LookupStringValue)* '}' ';' 
+;
+
+LookupIntValue:
+	{LookupIntValue}
+	'(' value=INT description=STRING ')';
+
+LookupStringValue:
+	{LookupStringValue}
+	'(' value=STRING description=STRING	')';
