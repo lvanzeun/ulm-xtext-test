@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:ulmDsl2="http://org.mycorp/ulm/metaulm/xtext/UlmDsl2" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_1TBeUI8sEeirvp86J8LR3g" selectedViews="_12ZRII8sEeirvp86J8LR3g" version="13.0.0.201804031646">
+    <semanticResources>logicalmodel.metaulm</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_12ZRII8sEeirvp86J8LR3g">
+      <viewpoint xmi:type="description:Viewpoint" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_8kGfQI8sEeirvp86J8LR3g" name="new MetaulmDiagram" repPath="#_8gSWQI8sEeirvp86J8LR3g">
+        <description xmi:type="description_1:DiagramDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']"/>
+        <target xmi:type="ulmDsl2:Model" href="logicalmodel.metaulm#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_8kBmwI8sEeirvp86J8LR3g" name="new MetaulmDiagram" uid="_8gSWQI8sEeirvp86J8LR3g">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_8kBmwY8sEeirvp86J8LR3g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_8kBmwo8sEeirvp86J8LR3g"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_8kybwI8sEeirvp86J8LR3g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_8kybwY8sEeirvp86J8LR3g" type="Sirius" element="_8kBmwI8sEeirvp86J8LR3g" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_8lLdUI8sEeirvp86J8LR3g" type="2003" element="_8kBmxI8sEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_8laG0I8sEeirvp86J8LR3g" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_8lcjEI8sEeirvp86J8LR3g" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_IN5BUI83Eeirvp86J8LR3g" type="3010" element="_INdjgI83Eeirvp86J8LR3g">
+              <styles xmi:type="notation:FontStyle" xmi:id="_IN5BUY83Eeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IN5BUo83Eeirvp86J8LR3g"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_8lcjEY8sEeirvp86J8LR3g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_8lcjEo8sEeirvp86J8LR3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_8lLdUY8sEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8lLdUo8sEeirvp86J8LR3g" x="396" y="69" width="147" height="114"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_8loJQI8sEeirvp86J8LR3g" type="2003" element="_8kBmyI8sEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_8lowUI8sEeirvp86J8LR3g" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_8lpXYI8sEeirvp86J8LR3g" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_IN5oY483Eeirvp86J8LR3g" type="3010" element="_INjqIo83Eeirvp86J8LR3g">
+              <styles xmi:type="notation:FontStyle" xmi:id="_IN5oZI83Eeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IN5oZY83Eeirvp86J8LR3g"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_8lpXYY8sEeirvp86J8LR3g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_8lpXYo8sEeirvp86J8LR3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_8loJQY8sEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8loJQo8sEeirvp86J8LR3g" x="240" y="216" width="135" height="99"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_8lpXY48sEeirvp86J8LR3g" type="2003" element="_8kBmzI8sEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_8lp-cI8sEeirvp86J8LR3g" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_8lp-cY8sEeirvp86J8LR3g" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_8lp-co8sEeirvp86J8LR3g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_8lp-c48sEeirvp86J8LR3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_8lpXZI8sEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8lpXZY8sEeirvp86J8LR3g" x="36" y="69" width="123" height="106"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_8lqlgI8sEeirvp86J8LR3g" type="2003" element="_8kBmzo8sEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_8lrMkI8sEeirvp86J8LR3g" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_8lrMkY8sEeirvp86J8LR3g" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_8lrMko8sEeirvp86J8LR3g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_8lrMk48sEeirvp86J8LR3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_8lqlgY8sEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8lqlgo8sEeirvp86J8LR3g" x="237" y="72" width="126" height="111"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ma2TsI8tEeirvp86J8LR3g" type="2003" element="_mauX4I8tEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_ma26wI8tEeirvp86J8LR3g" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_ma26wY8tEeirvp86J8LR3g" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_ma26wo8tEeirvp86J8LR3g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_ma26w48tEeirvp86J8LR3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ma2TsY8tEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ma2Tso8tEeirvp86J8LR3g" x="180" y="360" width="125" height="99"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_FolQII8wEeirvp86J8LR3g" type="2003" element="_FohlwI8wEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_FolQI48wEeirvp86J8LR3g" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_FolQJI8wEeirvp86J8LR3g" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_FolQJY8wEeirvp86J8LR3g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_FolQJo8wEeirvp86J8LR3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_FolQIY8wEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FolQIo8wEeirvp86J8LR3g" x="420" y="360" width="111" height="99"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_8kybwo8sEeirvp86J8LR3g"/>
+        <edges xmi:type="notation:Edge" xmi:id="_8mvjko8sEeirvp86J8LR3g" type="4001" element="_8kCN048sEeirvp86J8LR3g" source="_8lLdUI8sEeirvp86J8LR3g" target="_8loJQI8sEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_8mwKoI8sEeirvp86J8LR3g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mwKoY8sEeirvp86J8LR3g" x="29" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8mwKoo8sEeirvp86J8LR3g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mwKo48sEeirvp86J8LR3g" x="42" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8mwKpI8sEeirvp86J8LR3g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mwKpY8sEeirvp86J8LR3g" x="-8" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_8mvjk48sEeirvp86J8LR3g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_8mvjlI8sEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8mvjlY8sEeirvp86J8LR3g" points="[5, 94, 155, -69]$[10, 165, 160, 2]$[-91, 165, 59, 2]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8mwxsI8sEeirvp86J8LR3g" id="(0.30344827586206896,0.16071428571428573)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8mwxsY8sEeirvp86J8LR3g" id="(0.3759398496240601,0.3561387066541706)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_8mwxso8sEeirvp86J8LR3g" type="4001" element="_8kCN1o8sEeirvp86J8LR3g" source="_8lpXY48sEeirvp86J8LR3g" target="_8loJQI8sEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_8mwxto8sEeirvp86J8LR3g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mwxt48sEeirvp86J8LR3g" x="-20" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8mxYwI8sEeirvp86J8LR3g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mxYwY8sEeirvp86J8LR3g" x="-17" y="6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8mxYwo8sEeirvp86J8LR3g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mxYw48sEeirvp86J8LR3g" x="-7" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_8mwxs48sEeirvp86J8LR3g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_8mwxtI8sEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8mwxtY8sEeirvp86J8LR3g" points="[-2, 44, -169, -69]$[-3, 121, -170, 8]$[166, 121, -1, 8]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8mxYxI8sEeirvp86J8LR3g" id="(0.3140495867768595,0.5769230769230769)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8mxYxY8sEeirvp86J8LR3g" id="(0.012127091923356778,0.27179006560449853)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_FomeQI8wEeirvp86J8LR3g" type="4001" element="_Foiz4I8wEeirvp86J8LR3g" source="_8loJQI8sEeirvp86J8LR3g" target="_FolQII8wEeirvp86J8LR3g">
+          <children xmi:type="notation:Node" xmi:id="_FomeRI8wEeirvp86J8LR3g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FomeRY8wEeirvp86J8LR3g" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FonsYI8wEeirvp86J8LR3g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FonsYY8wEeirvp86J8LR3g" x="-1" y="-11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FonsYo8wEeirvp86J8LR3g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FonsY48wEeirvp86J8LR3g" x="2" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_FomeQY8wEeirvp86J8LR3g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_FomeQo8wEeirvp86J8LR3g" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FomeQ48wEeirvp86J8LR3g" points="[25, 20, -155, -124]$[155, 124, -25, -20]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FooTcI8wEeirvp86J8LR3g" id="(0.18796992481203004,0.25773195876288657)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FooTcY8wEeirvp86J8LR3g" id="(0.22935779816513763,0.2268041237113402)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8kBmxI8sEeirvp86J8LR3g" name="Entity1" outgoingEdges="_8kCN048sEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.0"/>
+      <semanticElements xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8kBmxY8sEeirvp86J8LR3g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_INdjgI83Eeirvp86J8LR3g" name="attr1">
+        <target xmi:type="ulmDsl2:AttributeFeatureType" href="logicalmodel.metaulm#//@contexts.0/@entities.0/@features.0/@featureType/@type/@t"/>
+        <semanticElements xmi:type="ulmDsl2:AttributeFeatureType" href="logicalmodel.metaulm#//@contexts.0/@entities.0/@features.0/@featureType/@type/@t"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_INh08I83Eeirvp86J8LR3g" labelSize="12" labelAlignment="LEFT" labelPosition="node">
+          <description xmi:type="style:SquareDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@subNodeMappings[name='AttributeFeatureTypeNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@subNodeMappings[name='AttributeFeatureTypeNode']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8kBmyI8sEeirvp86J8LR3g" name="Entity2" outgoingEdges="_Foiz4I8wEeirvp86J8LR3g" incomingEdges="_8kCN048sEeirvp86J8LR3g _8kCN1o8sEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.1"/>
+      <semanticElements xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8kBmyY8sEeirvp86J8LR3g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_INjqIo83Eeirvp86J8LR3g" name="AliasToAttr1">
+        <target xmi:type="ulmDsl2:AttributeFeatureType" href="logicalmodel.metaulm#//@contexts.0/@entities.1/@features.1/@featureType/@type/@t"/>
+        <semanticElements xmi:type="ulmDsl2:AttributeFeatureType" href="logicalmodel.metaulm#//@contexts.0/@entities.1/@features.1/@featureType/@type/@t"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_INkRMI83Eeirvp86J8LR3g" labelSize="12" labelAlignment="LEFT" labelPosition="node">
+          <description xmi:type="style:SquareDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@subNodeMappings[name='AttributeFeatureTypeNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@subNodeMappings[name='AttributeFeatureTypeNode']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8kBmzI8sEeirvp86J8LR3g" name="Entity3" outgoingEdges="_8kCN1o8sEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.2"/>
+      <semanticElements xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8kBmzY8sEeirvp86J8LR3g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8kBmzo8sEeirvp86J8LR3g" name="Entity5">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.3"/>
+      <semanticElements xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.3"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8kBmz48sEeirvp86J8LR3g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8kCN048sEeirvp86J8LR3g" sourceNode="_8kBmxI8sEeirvp86J8LR3g" targetNode="_8kBmyI8sEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8kCN1I8sEeirvp86J8LR3g" targetArrow="InputClosedArrow" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8kCN1Y8sEeirvp86J8LR3g"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8kCN1o8sEeirvp86J8LR3g" sourceNode="_8kBmzI8sEeirvp86J8LR3g" targetNode="_8kBmyI8sEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8kCN148sEeirvp86J8LR3g" targetArrow="InputClosedArrow" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8kCN2I8sEeirvp86J8LR3g"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_mauX4I8tEeirvp86J8LR3g" name="Entity9">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.4"/>
+      <semanticElements xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.4"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mau-8I8tEeirvp86J8LR3g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_FohlwI8wEeirvp86J8LR3g" name="Entity4" incomingEdges="_Foiz4I8wEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.5"/>
+      <semanticElements xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.5"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_FohlwY8wEeirvp86J8LR3g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Foiz4I8wEeirvp86J8LR3g" sourceNode="_8kBmyI8sEeirvp86J8LR3g" targetNode="_FohlwI8wEeirvp86J8LR3g">
+      <target xmi:type="ulmDsl2:Entity" href="logicalmodel.metaulm#//@contexts.0/@entities.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Foja8I8wEeirvp86J8LR3g" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityFeatureRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Foja8Y8wEeirvp86J8LR3g" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityFeatureRelation']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_8kCN2Y8sEeirvp86J8LR3g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="description/xtext2.odesign#//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer"/>
+    <target xmi:type="ulmDsl2:Model" href="logicalmodel.metaulm#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

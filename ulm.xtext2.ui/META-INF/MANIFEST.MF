@@ -22,5 +22,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ulm.metaulm.xtext.ui.quickfix,
  org.ulm.metaulm.xtext.ui.contentassist,
  ulm.xtext2.ui.internal
-Bundle-Activator: org.ulm.xtext2.ui.internal.Xtext2Activator
+Bundle-Activator: ulm.xtext2.ui.internal.Xtext2Activator
 Automatic-Module-Name: ulm.xtext2.ui

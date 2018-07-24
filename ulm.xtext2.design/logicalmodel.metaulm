@@ -1,13 +1,10 @@
 model simple_model {
-
 	context simple_context 1.2.3 {
-
 		attributes {
 			
 			attribute string attr1;
-		
-			attribute string attr2;
-		}
+		attribute string attr2;
+	}
 		
 		lookups {
 			
@@ -31,7 +28,7 @@ model simple_model {
 					
 					feature entity Entity4 identifier as zeEntity;
 					
-					feature attribute attr1 as zeAttr1;
+					feature attribute attr1 as AliasToAttr1;
 				}
 			}
 			
@@ -39,9 +36,21 @@ model simple_model {
 			
 			}
 			
+			entity Entity5 {
+			 	
+			 }
+			 entity Entity9 {
+			 	
+			 }
+			 
 			entity Entity4 {
 			
 			}
-		}
+		  
+	
+	
+	 
+	
 	}
+}
 }
