@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="xtext2" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="xtext2" version="12.0.0.2017041100">
   <ownedViewpoints name="MetaUlmViewpoint" modelFileExtension="*.metaulm">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MetaulmDiagram" domainClass="ulmDsl2::Model" enablePopupBars="true">
       <metamodel href="http://www.eclipse.org/xtext/xbase/Xtype#/"/>
@@ -13,7 +13,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="EntityEntityExtendRelation" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.superType">
+        <edgeMappings name="EntityEntityExtendRelation" deletionDescription="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteSuperType']" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.superType" reconnections="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectSuperType']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -21,8 +21,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="EntityContainer" domainClass="ulmDsl2::Entity" childrenPresentation="List">
-          <subNodeMappings name="AttributeFeatureTypeNode" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="ulmDsl2::AttributeFeatureType ">
+        <containerMappings name="EntityContainer" labelDirectEdit="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeEntityName']" domainClass="ulmDsl2::Entity" childrenPresentation="List">
+          <subNodeMappings name="AttributeFeatureTypeNode" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="ulmDsl2::AttributeFeatureType">
             <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="[self.getNameOrAlias()/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -38,8 +38,8 @@
         </containerMappings>
         <toolSections name="Entities">
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="createDataEntity" label="Data Entity" forceRefresh="true" containerMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']">
-            <variable name="newEntityNode"/>
-            <viewVariable name=" newEntityContainer"/>
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.contexts->first()/]">
@@ -51,9 +51,43 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createLookupEntity" label="Lookup Entity" forceRefresh="true" containerMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.contexts->first()/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="entities">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().entities->size().toString()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'lookup'"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createStaticEntity" label="Static Entity" forceRefresh="true" containerMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.contexts->first()/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="entities">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().entities->size().toString()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'static'"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="ChangeEntityName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Relationships">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setSuperType" label="Extends" precondition="aql:preTarget.differs(preSource)" edgeMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SetSuperType" label="SuperType" precondition="aql:preTarget.differs(preSource)" edgeMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityExtendRelation']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -64,7 +98,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddEntityFeature" label="References" edgeMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityFeatureRelation']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddEntityFeature" label="Reference" edgeMappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@edgeMappings[name='EntityEntityFeatureRelation']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -75,8 +109,51 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectSuperType" label="SuperType">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="superType" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectReference" label="Reference">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="features" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteSuperType" label="SuperType">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="superType"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Attributes" label="Data Dictionary" domainClass="ulmDsl2::Model">
+      <metamodel href="http://org.mycorp/ulm/metaulm/xtext/UlmDsl2#/"/>
+      <metamodel href="http://www.eclipse.org/xtext/xbase/Xtype#/"/>
+      <ownedLineMappings name="AttributeLine" label="AttributeAttributeLine" domainClass="ulmDsl2::Attribute" semanticCandidatesExpression="aql:self.contexts->first().attributes" headerLabelExpression="feature:name"/>
+      <ownedColumnMappings name="TypeCol" headerLabelExpression="Type" featureName="type" labelExpression="aql:self.type.type.typeName"/>
+      <ownedColumnMappings name="ColDesc" label="Description" headerLabelExpression="Description" featureName="desc" labelExpression="aql:self.desc"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.ulm.xtext2.design.Services"/>
   </ownedViewpoints>
