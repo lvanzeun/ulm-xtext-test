@@ -75,18 +75,18 @@ class UlmDsl2Formatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(Entity entity, extension IFormattableDocument document) {
-		entity.regionFor.keyword("entity").prepend[newLine]
-
 		interior(
 			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_5).prepend[oneSpace].append[newLine],
-			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_7).prepend[newLine]
+			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_7).prepend[newLine].append[newLine]
 		)[indent]
 		
 		interior(
 			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_6_1).prepend[oneSpace].append[newLine],
-			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_6_3).prepend[newLine]
+			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_6_3).prepend[newLine].append[newLine]
 		)[indent]
 
+		entity.regionFor.keyword("data").prepend[newLine]
+		
 		for (Feature feature : entity.features) {
 			feature.format;
 		}
