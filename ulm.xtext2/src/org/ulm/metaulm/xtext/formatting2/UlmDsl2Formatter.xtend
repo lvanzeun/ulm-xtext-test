@@ -4,60 +4,105 @@
 package org.ulm.metaulm.xtext.formatting2
 
 import com.google.inject.Inject
+import org.eclipse.xtext.formatting2.AbstractFormatter2
+import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.ulm.metaulm.xtext.services.UlmDsl2GrammarAccess
 import org.ulm.metaulm.xtext.ulmDsl2.Attribute
 import org.ulm.metaulm.xtext.ulmDsl2.Context
 import org.ulm.metaulm.xtext.ulmDsl2.Entity
+import org.ulm.metaulm.xtext.ulmDsl2.Feature
 import org.ulm.metaulm.xtext.ulmDsl2.Lookup
 import org.ulm.metaulm.xtext.ulmDsl2.Model
-import org.eclipse.xtext.formatting2.AbstractFormatter2
-import org.eclipse.xtext.formatting2.IFormattableDocument
 
 class UlmDsl2Formatter extends AbstractFormatter2 {
-	
+
 	@Inject extension UlmDsl2GrammarAccess
 
 	def dispatch void format(Model model, extension IFormattableDocument document) {
-		
-		interior (
-			model.regionFor.keyword("{"),
-			model.regionFor.keyword("}")
-		)[indent]
-		
-		model.regionFor.keyword("{").append[newLine]
-		model.regionFor.keyword("}").prepend[newLine]
 
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		interior(
+			model.regionFor.keyword("{").prepend[oneSpace].append[newLine],
+			model.regionFor.keyword("}").prepend[newLine]
+		)[indent]
+
 		for (Context context : model.getContexts()) {
 			context.format;
 		}
 	}
 
 	def dispatch void format(Context context, extension IFormattableDocument document) {
-		
-		interior (
-			context.regionFor.keyword("{"),
-			context.regionFor.keyword("}")
+
+		interior(
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_3).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_7).prepend[newLine]
 		)[indent]
 
-		context.regionFor.keyword("{").append[newLine]
-		context.regionFor.keyword("}").prepend[newLine]
-
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		interior(
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_4_1),
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_4_3).append[newLine]
+		)[indent]
+		context.regionFor.keyword("attributes").prepend[newLine].append[oneSpace]
 		for (Attribute attribute : context.getAttributes()) {
 			attribute.format;
 		}
+
+		interior(
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_5_1),
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_5_3).append[newLine]
+		)[indent]
+		context.regionFor.keyword("lookups").prepend[newLine].append[oneSpace]
 		for (Lookup lookup : context.getLookups()) {
 			lookup.format;
 		}
+
+		interior(
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_6_1),
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_6_3).append[newLine]
+		)[indent]
+		context.regionFor.keyword("entities").prepend[newLine].append[oneSpace]
 		for (Entity entity : context.getEntities()) {
 			entity.format;
 		}
 	}
-	
+
+	def dispatch void format(Lookup lookup, extension IFormattableDocument document) {
+		interior(
+			lookup.regionFor.keyword("{").prepend[oneSpace].append[newLine],
+			lookup.regionFor.keyword("}").prepend[newLine]
+		)[indent]
+
+		lookup.regionFor.keyword(",").prepend[noSpace].append[newLine]
+	}
+
+	def dispatch void format(Entity entity, extension IFormattableDocument document) {
+		entity.regionFor.keyword("entity").prepend[newLine]
+
+		interior(
+			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_5).prepend[oneSpace].append[newLine],
+			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_7).prepend[newLine]
+		)[indent]
+		
+		interior(
+			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_6_1).prepend[oneSpace].append[newLine],
+			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_6_3).prepend[newLine]
+		)[indent]
+
+		for (Feature feature : entity.features) {
+			feature.format;
+		}
+	}
+
 	def dispatch void format(Attribute attribute, extension IFormattableDocument document) {
+		attribute.regionFor.keyword("attribute").prepend[newLine]		
 		attribute.regionFor.keyword(";").append[newLine]
 	}
-	
-	// TODO: implement for Attribute, AttributeType, Entity, Feature, FeatureTypeType, FeatureType, LookupInt, LookupString
+
+	def dispatch void format(Feature feature, extension IFormattableDocument document) {
+		feature.regionFor.keyword("feature").prepend[newLine]
+		feature.regionFor.keyword(";").prepend[noSpace].append[newLine]
+		interior(
+			feature.regionFor.keyword("{").prepend[oneSpace].append[newLine],
+			feature.regionFor.keyword("}").prepend[newLine]
+		)[indent]
+	}
 }
