@@ -1,56 +1,49 @@
 model simple_model {
 	context simple_context 1.2.3 {
 		attributes {
-			
 			attribute string attr1;
-		attribute string attr2;
-	}
-		
+			attribute string attr2;
+		}
 		lookups {
 			
 			lookup integer Lookup1 values {
-
 				( 1 'Simple description' ),
 				( 2 'Other' )
 			};
 		}
-		
-		entities {		
-			
-			entity Entity1  extends Entity2 { features {
-					
+		entities {
+			entity Entity1  extends Entity2 {
+				features {
 					feature attribute attr1 mandatory;
+					feature entity Entity9;
 				}
 			}
 			entity Entity2 {
-				
 				features {
-					
 					feature entity Entity4 identifier as zeEntity;
-					
 					feature attribute attr1 as AliasToAttr1;
 				}
 			}
-			
 			entity Entity3 extends Entity2 {
-			
 			}
-			
+			entity Entity33 extends Entity2 {
+			}
+			entity Entity333 extends Entity2 {
+			}			
 			entity Entity5 {
-			 	
-			 }
-			 entity Entity9 {
-			 	
-			 }
-			 
-			entity Entity4 {
-			
 			}
-		  
-	
-	
-	 
-	
+			entity Entity9 extends Entity2 {
+			}
+			entity Entity4 {
+			}
+			data entity Entity7 {
+			}
+			data entity Entity8 {
+			}
+			data entity Entity11 {
+			}
+			data entity Entity10 {
+			}
+		}
 	}
-}
 }
