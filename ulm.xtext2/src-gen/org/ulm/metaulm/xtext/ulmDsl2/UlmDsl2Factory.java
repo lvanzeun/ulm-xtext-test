@@ -60,13 +60,22 @@ public interface UlmDsl2Factory extends EFactory
   AttributeType createAttributeType();
 
   /**
-   * Returns a new object of class '<em>Basic Type</em>'.
+   * Returns a new object of class '<em>Attribute String Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Basic Type</em>'.
+   * @return a new object of class '<em>Attribute String Type</em>'.
    * @generated
    */
-  BasicType createBasicType();
+  AttributeStringType createAttributeStringType();
+
+  /**
+   * Returns a new object of class '<em>Attribute Decimal Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute Decimal Type</em>'.
+   * @generated
+   */
+  AttributeDecimalType createAttributeDecimalType();
 
   /**
    * Returns a new object of class '<em>Entity</em>'.
@@ -85,15 +94,6 @@ public interface UlmDsl2Factory extends EFactory
    * @generated
    */
   Feature createFeature();
-
-  /**
-   * Returns a new object of class '<em>Feature Type Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature Type Type</em>'.
-   * @generated
-   */
-  FeatureTypeType createFeatureTypeType();
 
   /**
    * Returns a new object of class '<em>Feature Type</em>'.

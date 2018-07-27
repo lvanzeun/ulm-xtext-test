@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.ulm.metaulm.xtext.ulmDsl2.Feature;
-import org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType;
+import org.ulm.metaulm.xtext.ulmDsl2.FeatureType;
 import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 
 /**
@@ -24,10 +24,10 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureImpl#getFeatureType <em>Feature Type</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureImpl#isMandatory <em>Mandatory</em>}</li>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureImpl#isIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
 {
   /**
-   * The cached value of the '{@link #getFeatureType() <em>Feature Type</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeatureType()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected FeatureTypeType featureType;
+  protected FeatureType type;
 
   /**
    * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
@@ -85,24 +85,24 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   protected boolean identifier = IDENTIFIER_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlias()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ALIAS_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAlias() <em>Alias</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlias()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String alias = ALIAS_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -130,9 +130,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureTypeType getFeatureType()
+  public FeatureType getType()
   {
-    return featureType;
+    return type;
   }
 
   /**
@@ -140,13 +140,13 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFeatureType(FeatureTypeType newFeatureType, NotificationChain msgs)
+  public NotificationChain basicSetType(FeatureType newType, NotificationChain msgs)
   {
-    FeatureTypeType oldFeatureType = featureType;
-    featureType = newFeatureType;
+    FeatureType oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE__FEATURE_TYPE, oldFeatureType, newFeatureType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -157,20 +157,20 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFeatureType(FeatureTypeType newFeatureType)
+  public void setType(FeatureType newType)
   {
-    if (newFeatureType != featureType)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (featureType != null)
-        msgs = ((InternalEObject)featureType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE__FEATURE_TYPE, null, msgs);
-      if (newFeatureType != null)
-        msgs = ((InternalEObject)newFeatureType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE__FEATURE_TYPE, null, msgs);
-      msgs = basicSetFeatureType(newFeatureType, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE__FEATURE_TYPE, newFeatureType, newFeatureType));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE__TYPE, newType, newType));
   }
 
   /**
@@ -224,9 +224,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAlias()
+  public String getName()
   {
-    return alias;
+    return name;
   }
 
   /**
@@ -234,12 +234,12 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAlias(String newAlias)
+  public void setName(String newName)
   {
-    String oldAlias = alias;
-    alias = newAlias;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE__ALIAS, oldAlias, alias));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE__NAME, oldName, name));
   }
 
   /**
@@ -252,8 +252,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE__FEATURE_TYPE:
-        return basicSetFeatureType(null, msgs);
+      case UlmDsl2Package.FEATURE__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -268,14 +268,14 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE__FEATURE_TYPE:
-        return getFeatureType();
+      case UlmDsl2Package.FEATURE__TYPE:
+        return getType();
       case UlmDsl2Package.FEATURE__MANDATORY:
         return isMandatory();
       case UlmDsl2Package.FEATURE__IDENTIFIER:
         return isIdentifier();
-      case UlmDsl2Package.FEATURE__ALIAS:
-        return getAlias();
+      case UlmDsl2Package.FEATURE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -290,8 +290,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE__FEATURE_TYPE:
-        setFeatureType((FeatureTypeType)newValue);
+      case UlmDsl2Package.FEATURE__TYPE:
+        setType((FeatureType)newValue);
         return;
       case UlmDsl2Package.FEATURE__MANDATORY:
         setMandatory((Boolean)newValue);
@@ -299,8 +299,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
       case UlmDsl2Package.FEATURE__IDENTIFIER:
         setIdentifier((Boolean)newValue);
         return;
-      case UlmDsl2Package.FEATURE__ALIAS:
-        setAlias((String)newValue);
+      case UlmDsl2Package.FEATURE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -316,8 +316,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE__FEATURE_TYPE:
-        setFeatureType((FeatureTypeType)null);
+      case UlmDsl2Package.FEATURE__TYPE:
+        setType((FeatureType)null);
         return;
       case UlmDsl2Package.FEATURE__MANDATORY:
         setMandatory(MANDATORY_EDEFAULT);
@@ -325,8 +325,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
       case UlmDsl2Package.FEATURE__IDENTIFIER:
         setIdentifier(IDENTIFIER_EDEFAULT);
         return;
-      case UlmDsl2Package.FEATURE__ALIAS:
-        setAlias(ALIAS_EDEFAULT);
+      case UlmDsl2Package.FEATURE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -342,14 +342,14 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE__FEATURE_TYPE:
-        return featureType != null;
+      case UlmDsl2Package.FEATURE__TYPE:
+        return type != null;
       case UlmDsl2Package.FEATURE__MANDATORY:
         return mandatory != MANDATORY_EDEFAULT;
       case UlmDsl2Package.FEATURE__IDENTIFIER:
         return identifier != IDENTIFIER_EDEFAULT;
-      case UlmDsl2Package.FEATURE__ALIAS:
-        return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
+      case UlmDsl2Package.FEATURE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -369,8 +369,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
     result.append(mandatory);
     result.append(", identifier: ");
     result.append(identifier);
-    result.append(", alias: ");
-    result.append(alias);
+    result.append(", name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

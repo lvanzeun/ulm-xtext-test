@@ -25,25 +25,25 @@ public class UlmDsl2LabelProvider extends DefaultEObjectLabelProvider {
   
   public String _text(final Feature f) {
     String _xifexpression = null;
-    String _alias = f.getAlias();
-    boolean _tripleEquals = (_alias == null);
+    String _name = f.getName();
+    boolean _tripleEquals = (_name == null);
     if (_tripleEquals) {
       String _xblockexpression = null;
       {
-        final FeatureType ft = f.getFeatureType().getType();
+        final FeatureType ft = f.getType();
         String _xifexpression_1 = null;
         if ((ft instanceof AttributeFeatureType)) {
           String _xblockexpression_1 = null;
           {
             final AttributeFeatureType fta = ((AttributeFeatureType) ft);
-            _xblockexpression_1 = fta.getAttributeType().getName();
+            _xblockexpression_1 = fta.getAttribute().getName();
           }
           _xifexpression_1 = _xblockexpression_1;
         } else {
           String _xblockexpression_2 = null;
           {
             final EntityFeatureType fte = ((EntityFeatureType) ft);
-            _xblockexpression_2 = fte.getEntityType().getName();
+            _xblockexpression_2 = fte.getEntity().getName();
           }
           _xifexpression_1 = _xblockexpression_2;
         }
@@ -51,7 +51,7 @@ public class UlmDsl2LabelProvider extends DefaultEObjectLabelProvider {
       }
       _xifexpression = _xblockexpression;
     } else {
-      _xifexpression = f.getAlias();
+      _xifexpression = f.getName();
     }
     return _xifexpression;
   }

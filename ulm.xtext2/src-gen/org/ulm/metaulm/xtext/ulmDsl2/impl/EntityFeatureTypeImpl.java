@@ -23,7 +23,9 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityFeatureTypeImpl#getEntityType <em>Entity Type</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityFeatureTypeImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityFeatureTypeImpl#isArray <em>Array</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityFeatureTypeImpl#getLength <em>Length</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +33,54 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implements EntityFeatureType
 {
   /**
-   * The cached value of the '{@link #getEntityType() <em>Entity Type</em>}' reference.
+   * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEntityType()
+   * @see #getEntity()
    * @generated
    * @ordered
    */
-  protected Entity entityType;
+  protected Entity entity;
+
+  /**
+   * The default value of the '{@link #isArray() <em>Array</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isArray()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ARRAY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isArray() <em>Array</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isArray()
+   * @generated
+   * @ordered
+   */
+  protected boolean array = ARRAY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLength()
+   * @generated
+   * @ordered
+   */
+  protected static final int LENGTH_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLength()
+   * @generated
+   * @ordered
+   */
+  protected int length = LENGTH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,19 +108,19 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity getEntityType()
+  public Entity getEntity()
   {
-    if (entityType != null && entityType.eIsProxy())
+    if (entity != null && entity.eIsProxy())
     {
-      InternalEObject oldEntityType = (InternalEObject)entityType;
-      entityType = (Entity)eResolveProxy(oldEntityType);
-      if (entityType != oldEntityType)
+      InternalEObject oldEntity = (InternalEObject)entity;
+      entity = (Entity)eResolveProxy(oldEntity);
+      if (entity != oldEntity)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY_TYPE, oldEntityType, entityType));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY, oldEntity, entity));
       }
     }
-    return entityType;
+    return entity;
   }
 
   /**
@@ -86,9 +128,9 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity basicGetEntityType()
+  public Entity basicGetEntity()
   {
-    return entityType;
+    return entity;
   }
 
   /**
@@ -96,12 +138,58 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEntityType(Entity newEntityType)
+  public void setEntity(Entity newEntity)
   {
-    Entity oldEntityType = entityType;
-    entityType = newEntityType;
+    Entity oldEntity = entity;
+    entity = newEntity;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY_TYPE, oldEntityType, entityType));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY, oldEntity, entity));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isArray()
+  {
+    return array;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArray(boolean newArray)
+  {
+    boolean oldArray = array;
+    array = newArray;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ENTITY_FEATURE_TYPE__ARRAY, oldArray, array));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getLength()
+  {
+    return length;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLength(int newLength)
+  {
+    int oldLength = length;
+    length = newLength;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ENTITY_FEATURE_TYPE__LENGTH, oldLength, length));
   }
 
   /**
@@ -114,9 +202,13 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY_TYPE:
-        if (resolve) return getEntityType();
-        return basicGetEntityType();
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY:
+        if (resolve) return getEntity();
+        return basicGetEntity();
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ARRAY:
+        return isArray();
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__LENGTH:
+        return getLength();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -131,8 +223,14 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY_TYPE:
-        setEntityType((Entity)newValue);
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY:
+        setEntity((Entity)newValue);
+        return;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ARRAY:
+        setArray((Boolean)newValue);
+        return;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__LENGTH:
+        setLength((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,8 +246,14 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY_TYPE:
-        setEntityType((Entity)null);
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY:
+        setEntity((Entity)null);
+        return;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ARRAY:
+        setArray(ARRAY_EDEFAULT);
+        return;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__LENGTH:
+        setLength(LENGTH_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -165,10 +269,33 @@ public class EntityFeatureTypeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY_TYPE:
-        return entityType != null;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ENTITY:
+        return entity != null;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__ARRAY:
+        return array != ARRAY_EDEFAULT;
+      case UlmDsl2Package.ENTITY_FEATURE_TYPE__LENGTH:
+        return length != LENGTH_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (array: ");
+    result.append(array);
+    result.append(", length: ");
+    result.append(length);
+    result.append(')');
+    return result.toString();
   }
 
 } //EntityFeatureTypeImpl

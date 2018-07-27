@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttributeType <em>Attribute Type</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getLookup <em>Lookup</em>}</li>
  * </ul>
  *
  * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeFeatureType()
@@ -24,29 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface AttributeFeatureType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Attribute Type</b></em>' reference.
+   * Returns the value of the '<em><b>Attribute</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Attribute Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Attribute</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Attribute Type</em>' reference.
-   * @see #setAttributeType(Attribute)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeFeatureType_AttributeType()
+   * @return the value of the '<em>Attribute</em>' reference.
+   * @see #setAttribute(Attribute)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeFeatureType_Attribute()
    * @model
    * @generated
    */
-  Attribute getAttributeType();
+  Attribute getAttribute();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttributeType <em>Attribute Type</em>}' reference.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttribute <em>Attribute</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Attribute Type</em>' reference.
-   * @see #getAttributeType()
+   * @param value the new value of the '<em>Attribute</em>' reference.
+   * @see #getAttribute()
    * @generated
    */
-  void setAttributeType(Attribute value);
+  void setAttribute(Attribute value);
+
+  /**
+   * Returns the value of the '<em><b>Lookup</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Lookup</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lookup</em>' reference.
+   * @see #setLookup(Lookup)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeFeatureType_Lookup()
+   * @model
+   * @generated
+   */
+  Lookup getLookup();
+
+  /**
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getLookup <em>Lookup</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Lookup</em>' reference.
+   * @see #getLookup()
+   * @generated
+   */
+  void setLookup(Lookup value);
 
 } // AttributeFeatureType

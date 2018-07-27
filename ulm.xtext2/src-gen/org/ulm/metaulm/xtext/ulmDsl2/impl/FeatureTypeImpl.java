@@ -24,7 +24,7 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeImpl#getT <em>T</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements FeatureType
 {
   /**
-   * The cached value of the '{@link #getT() <em>T</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getT()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected EObject t;
+  protected EObject type;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getT()
+  public EObject getType()
   {
-    return t;
+    return type;
   }
 
   /**
@@ -77,13 +77,13 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT(EObject newT, NotificationChain msgs)
+  public NotificationChain basicSetType(EObject newType, NotificationChain msgs)
   {
-    EObject oldT = t;
-    t = newT;
+    EObject oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE__T, oldT, newT);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT(EObject newT)
+  public void setType(EObject newType)
   {
-    if (newT != t)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (t != null)
-        msgs = ((InternalEObject)t).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE_TYPE__T, null, msgs);
-      if (newT != null)
-        msgs = ((InternalEObject)newT).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE_TYPE__T, null, msgs);
-      msgs = basicSetT(newT, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE_TYPE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE_TYPE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE__T, newT, newT));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE__TYPE, newType, newType));
   }
 
   /**
@@ -120,8 +120,8 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE__T:
-        return basicSetT(null, msgs);
+      case UlmDsl2Package.FEATURE_TYPE__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE__T:
-        return getT();
+      case UlmDsl2Package.FEATURE_TYPE__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE__T:
-        setT((EObject)newValue);
+      case UlmDsl2Package.FEATURE_TYPE__TYPE:
+        setType((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE__T:
-        setT((EObject)null);
+      case UlmDsl2Package.FEATURE_TYPE__TYPE:
+        setType((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class FeatureTypeImpl extends MinimalEObjectImpl.Container implements Fea
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE__T:
-        return t != null;
+      case UlmDsl2Package.FEATURE_TYPE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }

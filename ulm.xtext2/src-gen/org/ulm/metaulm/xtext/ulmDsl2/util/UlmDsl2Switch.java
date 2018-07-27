@@ -101,10 +101,17 @@ public class UlmDsl2Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UlmDsl2Package.BASIC_TYPE:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE:
       {
-        BasicType basicType = (BasicType)theEObject;
-        T result = caseBasicType(basicType);
+        AttributeStringType attributeStringType = (AttributeStringType)theEObject;
+        T result = caseAttributeStringType(attributeStringType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UlmDsl2Package.ATTRIBUTE_DECIMAL_TYPE:
+      {
+        AttributeDecimalType attributeDecimalType = (AttributeDecimalType)theEObject;
+        T result = caseAttributeDecimalType(attributeDecimalType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -119,13 +126,6 @@ public class UlmDsl2Switch<T> extends Switch<T>
       {
         Feature feature = (Feature)theEObject;
         T result = caseFeature(feature);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UlmDsl2Package.FEATURE_TYPE_TYPE:
-      {
-        FeatureTypeType featureTypeType = (FeatureTypeType)theEObject;
-        T result = caseFeatureTypeType(featureTypeType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,7 +161,6 @@ public class UlmDsl2Switch<T> extends Switch<T>
       {
         LookupInt lookupInt = (LookupInt)theEObject;
         T result = caseLookupInt(lookupInt);
-        if (result == null) result = caseLookup(lookupInt);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,7 +168,6 @@ public class UlmDsl2Switch<T> extends Switch<T>
       {
         LookupString lookupString = (LookupString)theEObject;
         T result = caseLookupString(lookupString);
-        if (result == null) result = caseLookup(lookupString);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -256,17 +254,33 @@ public class UlmDsl2Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Attribute String Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Attribute String Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBasicType(BasicType object)
+  public T caseAttributeStringType(AttributeStringType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attribute Decimal Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attribute Decimal Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttributeDecimalType(AttributeDecimalType object)
   {
     return null;
   }
@@ -299,22 +313,6 @@ public class UlmDsl2Switch<T> extends Switch<T>
    * @generated
    */
   public T caseFeature(Feature object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature Type Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature Type Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFeatureTypeType(FeatureTypeType object)
   {
     return null;
   }

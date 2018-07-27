@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntityType <em>Entity Type</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#isArray <em>Array</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getLength <em>Length</em>}</li>
  * </ul>
  *
  * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getEntityFeatureType()
@@ -24,29 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface EntityFeatureType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Entity Type</b></em>' reference.
+   * Returns the value of the '<em><b>Entity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Entity Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Entity</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Entity Type</em>' reference.
-   * @see #setEntityType(Entity)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getEntityFeatureType_EntityType()
+   * @return the value of the '<em>Entity</em>' reference.
+   * @see #setEntity(Entity)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getEntityFeatureType_Entity()
    * @model
    * @generated
    */
-  Entity getEntityType();
+  Entity getEntity();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntityType <em>Entity Type</em>}' reference.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntity <em>Entity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Entity Type</em>' reference.
-   * @see #getEntityType()
+   * @param value the new value of the '<em>Entity</em>' reference.
+   * @see #getEntity()
    * @generated
    */
-  void setEntityType(Entity value);
+  void setEntity(Entity value);
+
+  /**
+   * Returns the value of the '<em><b>Array</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Array</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Array</em>' attribute.
+   * @see #setArray(boolean)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getEntityFeatureType_Array()
+   * @model
+   * @generated
+   */
+  boolean isArray();
+
+  /**
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#isArray <em>Array</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Array</em>' attribute.
+   * @see #isArray()
+   * @generated
+   */
+  void setArray(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Length</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Length</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Length</em>' attribute.
+   * @see #setLength(int)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getEntityFeatureType_Length()
+   * @model
+   * @generated
+   */
+  int getLength();
+
+  /**
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getLength <em>Length</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Length</em>' attribute.
+   * @see #getLength()
+   * @generated
+   */
+  void setLength(int value);
 
 } // EntityFeatureType

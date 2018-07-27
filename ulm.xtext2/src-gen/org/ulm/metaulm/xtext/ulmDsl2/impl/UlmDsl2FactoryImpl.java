@@ -69,10 +69,10 @@ public class UlmDsl2FactoryImpl extends EFactoryImpl implements UlmDsl2Factory
       case UlmDsl2Package.CONTEXT: return createContext();
       case UlmDsl2Package.ATTRIBUTE: return createAttribute();
       case UlmDsl2Package.ATTRIBUTE_TYPE: return createAttributeType();
-      case UlmDsl2Package.BASIC_TYPE: return createBasicType();
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE: return createAttributeStringType();
+      case UlmDsl2Package.ATTRIBUTE_DECIMAL_TYPE: return createAttributeDecimalType();
       case UlmDsl2Package.ENTITY: return createEntity();
       case UlmDsl2Package.FEATURE: return createFeature();
-      case UlmDsl2Package.FEATURE_TYPE_TYPE: return createFeatureTypeType();
       case UlmDsl2Package.FEATURE_TYPE: return createFeatureType();
       case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE: return createAttributeFeatureType();
       case UlmDsl2Package.ENTITY_FEATURE_TYPE: return createEntityFeatureType();
@@ -135,10 +135,21 @@ public class UlmDsl2FactoryImpl extends EFactoryImpl implements UlmDsl2Factory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType createBasicType()
+  public AttributeStringType createAttributeStringType()
   {
-    BasicTypeImpl basicType = new BasicTypeImpl();
-    return basicType;
+    AttributeStringTypeImpl attributeStringType = new AttributeStringTypeImpl();
+    return attributeStringType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttributeDecimalType createAttributeDecimalType()
+  {
+    AttributeDecimalTypeImpl attributeDecimalType = new AttributeDecimalTypeImpl();
+    return attributeDecimalType;
   }
 
   /**
@@ -161,17 +172,6 @@ public class UlmDsl2FactoryImpl extends EFactoryImpl implements UlmDsl2Factory
   {
     FeatureImpl feature = new FeatureImpl();
     return feature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FeatureTypeType createFeatureTypeType()
-  {
-    FeatureTypeTypeImpl featureTypeType = new FeatureTypeTypeImpl();
-    return featureTypeType;
   }
 
   /**

@@ -169,22 +169,22 @@ public interface UlmDsl2Package extends EPackage
   int ATTRIBUTE = 2;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE__TYPE = 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__NAME = 1;
+  int ATTRIBUTE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -215,31 +215,13 @@ public interface UlmDsl2Package extends EPackage
   int ATTRIBUTE_TYPE = 3;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_TYPE__TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Array</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_TYPE__ARRAY = 1;
-
-  /**
-   * The feature id for the '<em><b>Length</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_TYPE__LENGTH = 2;
+  int ATTRIBUTE_TYPE__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Attribute Type</em>' class.
@@ -248,35 +230,108 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_TYPE_FEATURE_COUNT = 3;
+  int ATTRIBUTE_TYPE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.BasicTypeImpl <em>Basic Type</em>}' class.
+   * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl <em>Attribute String Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.BasicTypeImpl
-   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getBasicType()
+   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl
+   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getAttributeStringType()
    * @generated
    */
-  int BASIC_TYPE = 4;
+  int ATTRIBUTE_STRING_TYPE = 4;
 
   /**
-   * The feature id for the '<em><b>Type Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BASIC_TYPE__TYPE_NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Basic Type</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASIC_TYPE_FEATURE_COUNT = 1;
+  int ATTRIBUTE_STRING_TYPE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Array</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_STRING_TYPE__ARRAY = 1;
+
+  /**
+   * The feature id for the '<em><b>Length</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_STRING_TYPE__LENGTH = 2;
+
+  /**
+   * The number of structural features of the '<em>Attribute String Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_STRING_TYPE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeDecimalTypeImpl <em>Attribute Decimal Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeDecimalTypeImpl
+   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getAttributeDecimalType()
+   * @generated
+   */
+  int ATTRIBUTE_DECIMAL_TYPE = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_DECIMAL_TYPE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Array</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_DECIMAL_TYPE__ARRAY = 1;
+
+  /**
+   * The feature id for the '<em><b>Scale</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_DECIMAL_TYPE__SCALE = 2;
+
+  /**
+   * The feature id for the '<em><b>Precision</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_DECIMAL_TYPE__PRECISION = 3;
+
+  /**
+   * The number of structural features of the '<em>Attribute Decimal Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_DECIMAL_TYPE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityImpl <em>Entity</em>}' class.
@@ -286,7 +341,7 @@ public interface UlmDsl2Package extends EPackage
    * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 5;
+  int ENTITY = 6;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -350,16 +405,16 @@ public interface UlmDsl2Package extends EPackage
    * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 6;
+  int FEATURE = 7;
 
   /**
-   * The feature id for the '<em><b>Feature Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__FEATURE_TYPE = 0;
+  int FEATURE__TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Mandatory</b></em>' attribute.
@@ -380,13 +435,13 @@ public interface UlmDsl2Package extends EPackage
   int FEATURE__IDENTIFIER = 2;
 
   /**
-   * The feature id for the '<em><b>Alias</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__ALIAS = 3;
+  int FEATURE__NAME = 3;
 
   /**
    * The number of structural features of the '<em>Feature</em>' class.
@@ -396,52 +451,6 @@ public interface UlmDsl2Package extends EPackage
    * @ordered
    */
   int FEATURE_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl <em>Feature Type Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl
-   * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getFeatureTypeType()
-   * @generated
-   */
-  int FEATURE_TYPE_TYPE = 7;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_TYPE_TYPE__TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Array</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_TYPE_TYPE__ARRAY = 1;
-
-  /**
-   * The feature id for the '<em><b>Length</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_TYPE_TYPE__LENGTH = 2;
-
-  /**
-   * The number of structural features of the '<em>Feature Type Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_TYPE_TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeImpl <em>Feature Type</em>}' class.
@@ -454,13 +463,13 @@ public interface UlmDsl2Package extends EPackage
   int FEATURE_TYPE = 8;
 
   /**
-   * The feature id for the '<em><b>T</b></em>' containment reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_TYPE__T = 0;
+  int FEATURE_TYPE__TYPE = 0;
 
   /**
    * The number of structural features of the '<em>Feature Type</em>' class.
@@ -482,13 +491,22 @@ public interface UlmDsl2Package extends EPackage
   int ATTRIBUTE_FEATURE_TYPE = 9;
 
   /**
-   * The feature id for the '<em><b>Attribute Type</b></em>' reference.
+   * The feature id for the '<em><b>Attribute</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE = 0;
+  int ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE = 0;
+
+  /**
+   * The feature id for the '<em><b>Lookup</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_FEATURE_TYPE__LOOKUP = 1;
 
   /**
    * The number of structural features of the '<em>Attribute Feature Type</em>' class.
@@ -497,7 +515,7 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_TYPE_FEATURE_COUNT = 1;
+  int ATTRIBUTE_FEATURE_TYPE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityFeatureTypeImpl <em>Entity Feature Type</em>}' class.
@@ -510,13 +528,31 @@ public interface UlmDsl2Package extends EPackage
   int ENTITY_FEATURE_TYPE = 10;
 
   /**
-   * The feature id for the '<em><b>Entity Type</b></em>' reference.
+   * The feature id for the '<em><b>Entity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_TYPE__ENTITY_TYPE = 0;
+  int ENTITY_FEATURE_TYPE__ENTITY = 0;
+
+  /**
+   * The feature id for the '<em><b>Array</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_FEATURE_TYPE__ARRAY = 1;
+
+  /**
+   * The feature id for the '<em><b>Length</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_FEATURE_TYPE__LENGTH = 2;
 
   /**
    * The number of structural features of the '<em>Entity Feature Type</em>' class.
@@ -525,7 +561,7 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_TYPE_FEATURE_COUNT = 1;
+  int ENTITY_FEATURE_TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupImpl <em>Lookup</em>}' class.
@@ -547,13 +583,13 @@ public interface UlmDsl2Package extends EPackage
   int LOOKUP__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOOKUP__DESCRIPTION = 1;
+  int LOOKUP__TYPE = 1;
 
   /**
    * The number of structural features of the '<em>Lookup</em>' class.
@@ -575,22 +611,13 @@ public interface UlmDsl2Package extends EPackage
   int LOOKUP_INT = 12;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_INT__NAME = LOOKUP__NAME;
-
-  /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOOKUP_INT__DESCRIPTION = LOOKUP__DESCRIPTION;
+  int LOOKUP_INT__DESCRIPTION = 0;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -599,7 +626,7 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int LOOKUP_INT__VALUES = LOOKUP_FEATURE_COUNT + 0;
+  int LOOKUP_INT__VALUES = 1;
 
   /**
    * The number of structural features of the '<em>Lookup Int</em>' class.
@@ -608,7 +635,7 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int LOOKUP_INT_FEATURE_COUNT = LOOKUP_FEATURE_COUNT + 1;
+  int LOOKUP_INT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupStringImpl <em>Lookup String</em>}' class.
@@ -621,22 +648,13 @@ public interface UlmDsl2Package extends EPackage
   int LOOKUP_STRING = 13;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_STRING__NAME = LOOKUP__NAME;
-
-  /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOOKUP_STRING__DESCRIPTION = LOOKUP__DESCRIPTION;
+  int LOOKUP_STRING__DESCRIPTION = 0;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -645,7 +663,7 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int LOOKUP_STRING__VALUES = LOOKUP_FEATURE_COUNT + 0;
+  int LOOKUP_STRING__VALUES = 1;
 
   /**
    * The number of structural features of the '<em>Lookup String</em>' class.
@@ -654,7 +672,7 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    * @ordered
    */
-  int LOOKUP_STRING_FEATURE_COUNT = LOOKUP_FEATURE_COUNT + 1;
+  int LOOKUP_STRING_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupIntValueImpl <em>Lookup Int Value</em>}' class.
@@ -839,17 +857,6 @@ public interface UlmDsl2Package extends EPackage
   EClass getAttribute();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.Attribute#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.Attribute#getType()
-   * @see #getAttribute()
-   * @generated
-   */
-  EReference getAttribute_Type();
-
-  /**
    * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.Attribute#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -859,6 +866,17 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    */
   EAttribute getAttribute_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.Attribute#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.Attribute#getType()
+   * @see #getAttribute()
+   * @generated
+   */
+  EReference getAttribute_Type();
 
   /**
    * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.Attribute#getDesc <em>Desc</em>}'.
@@ -882,58 +900,112 @@ public interface UlmDsl2Package extends EPackage
   EClass getAttributeType();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getType()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getName()
    * @see #getAttributeType()
    * @generated
    */
-  EReference getAttributeType_Type();
+  EAttribute getAttributeType_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#isArray <em>Array</em>}'.
+   * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType <em>Attribute String Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Attribute String Type</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType
+   * @generated
+   */
+  EClass getAttributeStringType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getName()
+   * @see #getAttributeStringType()
+   * @generated
+   */
+  EAttribute getAttributeStringType_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#isArray <em>Array</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Array</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeType#isArray()
-   * @see #getAttributeType()
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#isArray()
+   * @see #getAttributeStringType()
    * @generated
    */
-  EAttribute getAttributeType_Array();
+  EAttribute getAttributeStringType_Array();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getLength <em>Length</em>}'.
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getLength <em>Length</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Length</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getLength()
-   * @see #getAttributeType()
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getLength()
+   * @see #getAttributeStringType()
    * @generated
    */
-  EAttribute getAttributeType_Length();
+  EAttribute getAttributeStringType_Length();
 
   /**
-   * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.BasicType <em>Basic Type</em>}'.
+   * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType <em>Attribute Decimal Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Basic Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.BasicType
+   * @return the meta object for class '<em>Attribute Decimal Type</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType
    * @generated
    */
-  EClass getBasicType();
+  EClass getAttributeDecimalType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.BasicType#getTypeName <em>Type Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type Name</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.BasicType#getTypeName()
-   * @see #getBasicType()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#getName()
+   * @see #getAttributeDecimalType()
    * @generated
    */
-  EAttribute getBasicType_TypeName();
+  EAttribute getAttributeDecimalType_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#isArray <em>Array</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Array</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#isArray()
+   * @see #getAttributeDecimalType()
+   * @generated
+   */
+  EAttribute getAttributeDecimalType_Array();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#getScale <em>Scale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Scale</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#getScale()
+   * @see #getAttributeDecimalType()
+   * @generated
+   */
+  EAttribute getAttributeDecimalType_Scale();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#getPrecision <em>Precision</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Precision</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType#getPrecision()
+   * @see #getAttributeDecimalType()
+   * @generated
+   */
+  EAttribute getAttributeDecimalType_Precision();
 
   /**
    * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.Entity <em>Entity</em>}'.
@@ -1011,15 +1083,15 @@ public interface UlmDsl2Package extends EPackage
   EClass getFeature();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getFeatureType <em>Feature Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Feature Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.Feature#getFeatureType()
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.Feature#getType()
    * @see #getFeature()
    * @generated
    */
-  EReference getFeature_FeatureType();
+  EReference getFeature_Type();
 
   /**
    * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#isMandatory <em>Mandatory</em>}'.
@@ -1044,58 +1116,15 @@ public interface UlmDsl2Package extends EPackage
   EAttribute getFeature_Identifier();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getAlias <em>Alias</em>}'.
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Alias</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.Feature#getAlias()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.Feature#getName()
    * @see #getFeature()
    * @generated
    */
-  EAttribute getFeature_Alias();
-
-  /**
-   * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType <em>Feature Type Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature Type Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType
-   * @generated
-   */
-  EClass getFeatureTypeType();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getType()
-   * @see #getFeatureTypeType()
-   * @generated
-   */
-  EReference getFeatureTypeType_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#isArray <em>Array</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Array</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#isArray()
-   * @see #getFeatureTypeType()
-   * @generated
-   */
-  EAttribute getFeatureTypeType_Array();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getLength <em>Length</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Length</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getLength()
-   * @see #getFeatureTypeType()
-   * @generated
-   */
-  EAttribute getFeatureTypeType_Length();
+  EAttribute getFeature_Name();
 
   /**
    * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType <em>Feature Type</em>}'.
@@ -1108,15 +1137,15 @@ public interface UlmDsl2Package extends EPackage
   EClass getFeatureType();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getT <em>T</em>}'.
+   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getT()
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getType()
    * @see #getFeatureType()
    * @generated
    */
-  EReference getFeatureType_T();
+  EReference getFeatureType_Type();
 
   /**
    * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType <em>Attribute Feature Type</em>}'.
@@ -1129,15 +1158,26 @@ public interface UlmDsl2Package extends EPackage
   EClass getAttributeFeatureType();
 
   /**
-   * Returns the meta object for the reference '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttributeType <em>Attribute Type</em>}'.
+   * Returns the meta object for the reference '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Attribute Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttributeType()
+   * @return the meta object for the reference '<em>Attribute</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getAttribute()
    * @see #getAttributeFeatureType()
    * @generated
    */
-  EReference getAttributeFeatureType_AttributeType();
+  EReference getAttributeFeatureType_Attribute();
+
+  /**
+   * Returns the meta object for the reference '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getLookup <em>Lookup</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Lookup</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType#getLookup()
+   * @see #getAttributeFeatureType()
+   * @generated
+   */
+  EReference getAttributeFeatureType_Lookup();
 
   /**
    * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType <em>Entity Feature Type</em>}'.
@@ -1150,15 +1190,37 @@ public interface UlmDsl2Package extends EPackage
   EClass getEntityFeatureType();
 
   /**
-   * Returns the meta object for the reference '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntityType <em>Entity Type</em>}'.
+   * Returns the meta object for the reference '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Entity Type</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntityType()
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getEntity()
    * @see #getEntityFeatureType()
    * @generated
    */
-  EReference getEntityFeatureType_EntityType();
+  EReference getEntityFeatureType_Entity();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#isArray <em>Array</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Array</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#isArray()
+   * @see #getEntityFeatureType()
+   * @generated
+   */
+  EAttribute getEntityFeatureType_Array();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getLength <em>Length</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Length</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType#getLength()
+   * @see #getEntityFeatureType()
+   * @generated
+   */
+  EAttribute getEntityFeatureType_Length();
 
   /**
    * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup <em>Lookup</em>}'.
@@ -1182,15 +1244,15 @@ public interface UlmDsl2Package extends EPackage
   EAttribute getLookup_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getDescription <em>Description</em>}'.
+   * Returns the meta object for the containment reference '{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.Lookup#getDescription()
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.Lookup#getType()
    * @see #getLookup()
    * @generated
    */
-  EAttribute getLookup_Description();
+  EReference getLookup_Type();
 
   /**
    * Returns the meta object for class '{@link org.ulm.metaulm.xtext.ulmDsl2.LookupInt <em>Lookup Int</em>}'.
@@ -1201,6 +1263,17 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    */
   EClass getLookupInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.LookupInt#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.LookupInt#getDescription()
+   * @see #getLookupInt()
+   * @generated
+   */
+  EAttribute getLookupInt_Description();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.ulm.metaulm.xtext.ulmDsl2.LookupInt#getValues <em>Values</em>}'.
@@ -1222,6 +1295,17 @@ public interface UlmDsl2Package extends EPackage
    * @generated
    */
   EClass getLookupString();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ulm.metaulm.xtext.ulmDsl2.LookupString#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.LookupString#getDescription()
+   * @see #getLookupString()
+   * @generated
+   */
+  EAttribute getLookupString_Description();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.ulm.metaulm.xtext.ulmDsl2.LookupString#getValues <em>Values</em>}'.
@@ -1408,20 +1492,20 @@ public interface UlmDsl2Package extends EPackage
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
     /**
      * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
@@ -1442,12 +1526,30 @@ public interface UlmDsl2Package extends EPackage
     EClass ATTRIBUTE_TYPE = eINSTANCE.getAttributeType();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATTRIBUTE_TYPE__TYPE = eINSTANCE.getAttributeType_Type();
+    EAttribute ATTRIBUTE_TYPE__NAME = eINSTANCE.getAttributeType_Name();
+
+    /**
+     * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl <em>Attribute String Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl
+     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getAttributeStringType()
+     * @generated
+     */
+    EClass ATTRIBUTE_STRING_TYPE = eINSTANCE.getAttributeStringType();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE_STRING_TYPE__NAME = eINSTANCE.getAttributeStringType_Name();
 
     /**
      * The meta object literal for the '<em><b>Array</b></em>' attribute feature.
@@ -1455,7 +1557,7 @@ public interface UlmDsl2Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE_TYPE__ARRAY = eINSTANCE.getAttributeType_Array();
+    EAttribute ATTRIBUTE_STRING_TYPE__ARRAY = eINSTANCE.getAttributeStringType_Array();
 
     /**
      * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
@@ -1463,25 +1565,49 @@ public interface UlmDsl2Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE_TYPE__LENGTH = eINSTANCE.getAttributeType_Length();
+    EAttribute ATTRIBUTE_STRING_TYPE__LENGTH = eINSTANCE.getAttributeStringType_Length();
 
     /**
-     * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.BasicTypeImpl <em>Basic Type</em>}' class.
+     * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeDecimalTypeImpl <em>Attribute Decimal Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.BasicTypeImpl
-     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getBasicType()
+     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeDecimalTypeImpl
+     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getAttributeDecimalType()
      * @generated
      */
-    EClass BASIC_TYPE = eINSTANCE.getBasicType();
+    EClass ATTRIBUTE_DECIMAL_TYPE = eINSTANCE.getAttributeDecimalType();
 
     /**
-     * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BASIC_TYPE__TYPE_NAME = eINSTANCE.getBasicType_TypeName();
+    EAttribute ATTRIBUTE_DECIMAL_TYPE__NAME = eINSTANCE.getAttributeDecimalType_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Array</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE_DECIMAL_TYPE__ARRAY = eINSTANCE.getAttributeDecimalType_Array();
+
+    /**
+     * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE_DECIMAL_TYPE__SCALE = eINSTANCE.getAttributeDecimalType_Scale();
+
+    /**
+     * The meta object literal for the '<em><b>Precision</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE_DECIMAL_TYPE__PRECISION = eINSTANCE.getAttributeDecimalType_Precision();
 
     /**
      * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityImpl <em>Entity</em>}' class.
@@ -1544,12 +1670,12 @@ public interface UlmDsl2Package extends EPackage
     EClass FEATURE = eINSTANCE.getFeature();
 
     /**
-     * The meta object literal for the '<em><b>Feature Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FEATURE__FEATURE_TYPE = eINSTANCE.getFeature_FeatureType();
+    EReference FEATURE__TYPE = eINSTANCE.getFeature_Type();
 
     /**
      * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
@@ -1568,46 +1694,12 @@ public interface UlmDsl2Package extends EPackage
     EAttribute FEATURE__IDENTIFIER = eINSTANCE.getFeature_Identifier();
 
     /**
-     * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FEATURE__ALIAS = eINSTANCE.getFeature_Alias();
-
-    /**
-     * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl <em>Feature Type Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl
-     * @see org.ulm.metaulm.xtext.ulmDsl2.impl.UlmDsl2PackageImpl#getFeatureTypeType()
-     * @generated
-     */
-    EClass FEATURE_TYPE_TYPE = eINSTANCE.getFeatureTypeType();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FEATURE_TYPE_TYPE__TYPE = eINSTANCE.getFeatureTypeType_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Array</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE_TYPE_TYPE__ARRAY = eINSTANCE.getFeatureTypeType_Array();
-
-    /**
-     * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE_TYPE_TYPE__LENGTH = eINSTANCE.getFeatureTypeType_Length();
+    EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
 
     /**
      * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeImpl <em>Feature Type</em>}' class.
@@ -1620,12 +1712,12 @@ public interface UlmDsl2Package extends EPackage
     EClass FEATURE_TYPE = eINSTANCE.getFeatureType();
 
     /**
-     * The meta object literal for the '<em><b>T</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FEATURE_TYPE__T = eINSTANCE.getFeatureType_T();
+    EReference FEATURE_TYPE__TYPE = eINSTANCE.getFeatureType_Type();
 
     /**
      * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeFeatureTypeImpl <em>Attribute Feature Type</em>}' class.
@@ -1638,12 +1730,20 @@ public interface UlmDsl2Package extends EPackage
     EClass ATTRIBUTE_FEATURE_TYPE = eINSTANCE.getAttributeFeatureType();
 
     /**
-     * The meta object literal for the '<em><b>Attribute Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE = eINSTANCE.getAttributeFeatureType_AttributeType();
+    EReference ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE = eINSTANCE.getAttributeFeatureType_Attribute();
+
+    /**
+     * The meta object literal for the '<em><b>Lookup</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE_FEATURE_TYPE__LOOKUP = eINSTANCE.getAttributeFeatureType_Lookup();
 
     /**
      * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.EntityFeatureTypeImpl <em>Entity Feature Type</em>}' class.
@@ -1656,12 +1756,28 @@ public interface UlmDsl2Package extends EPackage
     EClass ENTITY_FEATURE_TYPE = eINSTANCE.getEntityFeatureType();
 
     /**
-     * The meta object literal for the '<em><b>Entity Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTITY_FEATURE_TYPE__ENTITY_TYPE = eINSTANCE.getEntityFeatureType_EntityType();
+    EReference ENTITY_FEATURE_TYPE__ENTITY = eINSTANCE.getEntityFeatureType_Entity();
+
+    /**
+     * The meta object literal for the '<em><b>Array</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY_FEATURE_TYPE__ARRAY = eINSTANCE.getEntityFeatureType_Array();
+
+    /**
+     * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY_FEATURE_TYPE__LENGTH = eINSTANCE.getEntityFeatureType_Length();
 
     /**
      * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupImpl <em>Lookup</em>}' class.
@@ -1682,12 +1798,12 @@ public interface UlmDsl2Package extends EPackage
     EAttribute LOOKUP__NAME = eINSTANCE.getLookup_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOOKUP__DESCRIPTION = eINSTANCE.getLookup_Description();
+    EReference LOOKUP__TYPE = eINSTANCE.getLookup_Type();
 
     /**
      * The meta object literal for the '{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupIntImpl <em>Lookup Int</em>}' class.
@@ -1698,6 +1814,14 @@ public interface UlmDsl2Package extends EPackage
      * @generated
      */
     EClass LOOKUP_INT = eINSTANCE.getLookupInt();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOOKUP_INT__DESCRIPTION = eINSTANCE.getLookupInt_Description();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
@@ -1716,6 +1840,14 @@ public interface UlmDsl2Package extends EPackage
      * @generated
      */
     EClass LOOKUP_STRING = eINSTANCE.getLookupString();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOOKUP_STRING__DESCRIPTION = eINSTANCE.getLookupString_Description();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.

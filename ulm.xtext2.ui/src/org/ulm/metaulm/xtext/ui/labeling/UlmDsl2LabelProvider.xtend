@@ -23,34 +23,28 @@ class UlmDsl2LabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
 	def _text(Feature f) {
 		
-		if (f.alias === null) {
+		if (f.name === null) {
 			
-			val FeatureType ft = f.featureType.type
+			val FeatureType ft = f.type
 			
 			if (ft instanceof AttributeFeatureType ) {
 				
 				val fta = ft as AttributeFeatureType
 				
-				fta.attributeType.name
+				fta.attribute.name
 				
 			} else {
 				
 				val fte = ft as EntityFeatureType
 				
-				fte.entityType.name
+				fte.entity.name
 			}
+			
 		} else {
-			f.alias
+			
+			f.name
 		}
 	}
 }

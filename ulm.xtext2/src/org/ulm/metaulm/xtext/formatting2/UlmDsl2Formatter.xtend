@@ -18,18 +18,6 @@ class UlmDsl2Formatter extends AbstractFormatter2 {
 
 	@Inject extension UlmDsl2GrammarAccess
 
-	def dispatch void format(Model model, extension IFormattableDocument document) {
-
-		interior(
-			model.regionFor.keyword("{").prepend[oneSpace].append[newLine],
-			model.regionFor.keyword("}").prepend[newLine]
-		)[indent]
-
-		for (Context context : model.getContexts()) {
-			context.format;
-		}
-	}
-
 	def dispatch void format(Context context, extension IFormattableDocument document) {
 
 		interior(
@@ -63,46 +51,5 @@ class UlmDsl2Formatter extends AbstractFormatter2 {
 		for (Entity entity : context.getEntities()) {
 			entity.format;
 		}
-	}
-
-	def dispatch void format(Lookup lookup, extension IFormattableDocument document) {
-		interior(
-			lookup.regionFor.keyword("{").prepend[oneSpace].append[newLine],
-			lookup.regionFor.keyword("}").prepend[newLine]
-		)[indent]
-
-		lookup.regionFor.keyword(",").prepend[noSpace].append[newLine]
-	}
-
-	def dispatch void format(Entity entity, extension IFormattableDocument document) {
-		interior(
-			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_5).prepend[oneSpace].append[newLine],
-			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_7).prepend[newLine].append[newLine]
-		)[indent]
-		
-		interior(
-			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_6_1).prepend[oneSpace].append[newLine],
-			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_6_3).prepend[newLine].append[newLine]
-		)[indent]
-
-		entity.regionFor.keyword("data").prepend[newLine]
-		
-		for (Feature feature : entity.features) {
-			feature.format;
-		}
-	}
-
-	def dispatch void format(Attribute attribute, extension IFormattableDocument document) {
-		attribute.regionFor.keyword("attribute").prepend[newLine]		
-		attribute.regionFor.keyword(";").append[newLine]
-	}
-
-	def dispatch void format(Feature feature, extension IFormattableDocument document) {
-		feature.regionFor.keyword("feature").prepend[newLine]
-		feature.regionFor.keyword(";").prepend[noSpace].append[newLine]
-		interior(
-			feature.regionFor.keyword("{").prepend[oneSpace].append[newLine],
-			feature.regionFor.keyword("}").prepend[newLine]
-		)[indent]
 	}
 }

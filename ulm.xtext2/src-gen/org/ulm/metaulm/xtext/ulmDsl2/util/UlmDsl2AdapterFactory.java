@@ -96,9 +96,14 @@ public class UlmDsl2AdapterFactory extends AdapterFactoryImpl
         return createAttributeTypeAdapter();
       }
       @Override
-      public Adapter caseBasicType(BasicType object)
+      public Adapter caseAttributeStringType(AttributeStringType object)
       {
-        return createBasicTypeAdapter();
+        return createAttributeStringTypeAdapter();
+      }
+      @Override
+      public Adapter caseAttributeDecimalType(AttributeDecimalType object)
+      {
+        return createAttributeDecimalTypeAdapter();
       }
       @Override
       public Adapter caseEntity(Entity object)
@@ -109,11 +114,6 @@ public class UlmDsl2AdapterFactory extends AdapterFactoryImpl
       public Adapter caseFeature(Feature object)
       {
         return createFeatureAdapter();
-      }
-      @Override
-      public Adapter caseFeatureTypeType(FeatureTypeType object)
-      {
-        return createFeatureTypeTypeAdapter();
       }
       @Override
       public Adapter caseFeatureType(FeatureType object)
@@ -238,16 +238,31 @@ public class UlmDsl2AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ulm.metaulm.xtext.ulmDsl2.BasicType <em>Basic Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType <em>Attribute String Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.BasicType
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType
    * @generated
    */
-  public Adapter createBasicTypeAdapter()
+  public Adapter createAttributeStringTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType <em>Attribute Decimal Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType
+   * @generated
+   */
+  public Adapter createAttributeDecimalTypeAdapter()
   {
     return null;
   }
@@ -278,21 +293,6 @@ public class UlmDsl2AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFeatureAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType <em>Feature Type Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType
-   * @generated
-   */
-  public Adapter createFeatureTypeTypeAdapter()
   {
     return null;
   }

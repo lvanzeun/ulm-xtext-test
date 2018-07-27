@@ -16,15 +16,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.ulm.metaulm.xtext.services.UlmDsl2GrammarAccess;
 import org.ulm.metaulm.xtext.ulmDsl2.Attribute;
+import org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType;
 import org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType;
+import org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType;
 import org.ulm.metaulm.xtext.ulmDsl2.AttributeType;
-import org.ulm.metaulm.xtext.ulmDsl2.BasicType;
 import org.ulm.metaulm.xtext.ulmDsl2.Context;
 import org.ulm.metaulm.xtext.ulmDsl2.Entity;
 import org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType;
 import org.ulm.metaulm.xtext.ulmDsl2.Feature;
 import org.ulm.metaulm.xtext.ulmDsl2.FeatureType;
-import org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType;
+import org.ulm.metaulm.xtext.ulmDsl2.Lookup;
 import org.ulm.metaulm.xtext.ulmDsl2.LookupInt;
 import org.ulm.metaulm.xtext.ulmDsl2.LookupIntValue;
 import org.ulm.metaulm.xtext.ulmDsl2.LookupString;
@@ -49,14 +50,17 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 			case UlmDsl2Package.ATTRIBUTE:
 				sequence_Attribute(context, (Attribute) semanticObject); 
 				return; 
+			case UlmDsl2Package.ATTRIBUTE_DECIMAL_TYPE:
+				sequence_AttributeDecimalType(context, (AttributeDecimalType) semanticObject); 
+				return; 
 			case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE:
 				sequence_AttributeFeatureType(context, (AttributeFeatureType) semanticObject); 
 				return; 
+			case UlmDsl2Package.ATTRIBUTE_STRING_TYPE:
+				sequence_AttributeStringType(context, (AttributeStringType) semanticObject); 
+				return; 
 			case UlmDsl2Package.ATTRIBUTE_TYPE:
 				sequence_AttributeType(context, (AttributeType) semanticObject); 
-				return; 
-			case UlmDsl2Package.BASIC_TYPE:
-				sequence_BasicType(context, (BasicType) semanticObject); 
 				return; 
 			case UlmDsl2Package.CONTEXT:
 				sequence_Context(context, (Context) semanticObject); 
@@ -73,8 +77,8 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 			case UlmDsl2Package.FEATURE_TYPE:
 				sequence_FeatureType(context, (FeatureType) semanticObject); 
 				return; 
-			case UlmDsl2Package.FEATURE_TYPE_TYPE:
-				sequence_FeatureTypeType(context, (FeatureTypeType) semanticObject); 
+			case UlmDsl2Package.LOOKUP:
+				sequence_Lookup(context, (Lookup) semanticObject); 
 				return; 
 			case UlmDsl2Package.LOOKUP_INT:
 				sequence_LookupInt(context, (LookupInt) semanticObject); 
@@ -98,19 +102,37 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AttributeDecimalType returns AttributeDecimalType
+	 *
+	 * Constraint:
+	 *     (name='decimal' (array?='[' scale=INT precision=INT?)?)
+	 */
+	protected void sequence_AttributeDecimalType(ISerializationContext context, AttributeDecimalType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AttributeFeatureType returns AttributeFeatureType
 	 *
 	 * Constraint:
-	 *     attributeType=[Attribute|ID]
+	 *     (attribute=[Attribute|ID] lookup=[Lookup|ID]?)
 	 */
 	protected void sequence_AttributeFeatureType(ISerializationContext context, AttributeFeatureType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, UlmDsl2Package.Literals.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UlmDsl2Package.Literals.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttributeFeatureTypeAccess().getAttributeTypeAttributeIDTerminalRuleCall_1_0_1(), semanticObject.eGet(UlmDsl2Package.Literals.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AttributeStringType returns AttributeStringType
+	 *
+	 * Constraint:
+	 *     (name='string' (array?='[' length=INT)?)
+	 */
+	protected void sequence_AttributeStringType(ISerializationContext context, AttributeStringType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -119,7 +141,7 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AttributeType returns AttributeType
 	 *
 	 * Constraint:
-	 *     (type=BasicType (array?='[' length=INT?)?)
+	 *     (name='int' | name='boolean' | name='date' | name='datetime' | name='timestamp')
 	 */
 	protected void sequence_AttributeType(ISerializationContext context, AttributeType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -131,29 +153,9 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (type=AttributeType name=ID desc=STRING?)
+	 *     (name=ID (type=AttributeType | type=AttributeStringType | type=AttributeDecimalType) desc=STRING?)
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     BasicType returns BasicType
-	 *
-	 * Constraint:
-	 *     (
-	 *         typeName='string' | 
-	 *         typeName='int' | 
-	 *         typeName='decimal' | 
-	 *         typeName='boolean' | 
-	 *         typeName='date' | 
-	 *         typeName='datetime' | 
-	 *         typeName='timestamp'
-	 *     )
-	 */
-	protected void sequence_BasicType(ISerializationContext context, BasicType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -175,16 +177,10 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     EntityFeatureType returns EntityFeatureType
 	 *
 	 * Constraint:
-	 *     entityType=[Entity|ID]
+	 *     (entity=[Entity|ID] (array?='[' length=INT?)?)
 	 */
 	protected void sequence_EntityFeatureType(ISerializationContext context, EntityFeatureType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, UlmDsl2Package.Literals.ENTITY_FEATURE_TYPE__ENTITY_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UlmDsl2Package.Literals.ENTITY_FEATURE_TYPE__ENTITY_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEntityFeatureTypeAccess().getEntityTypeEntityIDTerminalRuleCall_1_0_1(), semanticObject.eGet(UlmDsl2Package.Literals.ENTITY_FEATURE_TYPE__ENTITY_TYPE, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -202,22 +198,10 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     FeatureTypeType returns FeatureTypeType
-	 *
-	 * Constraint:
-	 *     (type=FeatureType (array?='[' length=INT?)?)
-	 */
-	protected void sequence_FeatureTypeType(ISerializationContext context, FeatureTypeType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     FeatureType returns FeatureType
 	 *
 	 * Constraint:
-	 *     (t=AttributeFeatureType | t=EntityFeatureType)
+	 *     (type=AttributeFeatureType | type=EntityFeatureType)
 	 */
 	protected void sequence_FeatureType(ISerializationContext context, FeatureType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -229,7 +213,7 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Feature returns Feature
 	 *
 	 * Constraint:
-	 *     (featureType=FeatureTypeType mandatory?='mandatory'? identifier?='identifier'? alias=ID?)
+	 *     (type=FeatureType mandatory?='mandatory'? identifier?='identifier'? name=ID?)
 	 */
 	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -252,18 +236,17 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLookupIntValueAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getLookupIntValueAccess().getDescriptionSTRINGTerminalRuleCall_3_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getLookupIntValueAccess().getDescriptionSTRINGTerminalRuleCall_4_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Lookup returns LookupInt
 	 *     LookupInt returns LookupInt
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING? values+=LookupIntValue values+=LookupIntValue*)
+	 *     (description=STRING? values+=LookupIntValue values+=LookupIntValue*)
 	 */
 	protected void sequence_LookupInt(ISerializationContext context, LookupInt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -286,20 +269,31 @@ public class UlmDsl2SemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLookupStringValueAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getLookupStringValueAccess().getDescriptionSTRINGTerminalRuleCall_3_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getLookupStringValueAccess().getDescriptionSTRINGTerminalRuleCall_4_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Lookup returns LookupString
 	 *     LookupString returns LookupString
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING? values+=LookupStringValue values+=LookupStringValue*)
+	 *     (description=STRING? values+=LookupStringValue values+=LookupStringValue*)
 	 */
 	protected void sequence_LookupString(ISerializationContext context, LookupString semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Lookup returns Lookup
+	 *
+	 * Constraint:
+	 *     (name=ID (type=LookupInt | type=LookupString))
+	 */
+	protected void sequence_Lookup(ISerializationContext context, Lookup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

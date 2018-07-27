@@ -14,9 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getType <em>Type</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#isArray <em>Array</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getLength <em>Length</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeType()
@@ -26,81 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface AttributeType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(BasicType)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeType_Type()
-   * @model containment="true"
-   * @generated
-   */
-  BasicType getType();
-
-  /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
-  void setType(BasicType value);
-
-  /**
-   * Returns the value of the '<em><b>Array</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Array</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Array</em>' attribute.
-   * @see #setArray(boolean)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeType_Array()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeType_Name()
    * @model
    * @generated
    */
-  boolean isArray();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#isArray <em>Array</em>}' attribute.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Array</em>' attribute.
-   * @see #isArray()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setArray(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Length</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Length</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Length</em>' attribute.
-   * @see #setLength(int)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeType_Length()
-   * @model
-   * @generated
-   */
-  int getLength();
-
-  /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeType#getLength <em>Length</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Length</em>' attribute.
-   * @see #getLength()
-   * @generated
-   */
-  void setLength(int value);
+  void setName(String value);
 
 } // AttributeType

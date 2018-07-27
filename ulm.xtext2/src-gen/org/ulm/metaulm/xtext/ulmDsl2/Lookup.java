@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getName <em>Name</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getLookup()
@@ -51,29 +51,29 @@ public interface Lookup extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getLookup_Description()
-   * @model
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(EObject)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getLookup_Type()
+   * @model containment="true"
    * @generated
    */
-  String getDescription();
+  EObject getType();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.Lookup#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
    * @generated
    */
-  void setDescription(String value);
+  void setType(EObject value);
 
 } // Lookup

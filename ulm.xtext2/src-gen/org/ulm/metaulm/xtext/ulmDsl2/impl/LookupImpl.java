@@ -4,8 +4,11 @@
 package org.ulm.metaulm.xtext.ulmDsl2.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -22,7 +25,7 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * </p>
  * <ul>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.LookupImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +53,14 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
+  protected EObject type;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,9 +111,9 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDescription()
+  public EObject getType()
   {
-    return description;
+    return type;
   }
 
   /**
@@ -128,12 +121,53 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDescription(String newDescription)
+  public NotificationChain basicSetType(EObject newType, NotificationChain msgs)
   {
-    String oldDescription = description;
-    description = newDescription;
+    EObject oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.LOOKUP__DESCRIPTION, oldDescription, description));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.LOOKUP__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(EObject newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.LOOKUP__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.LOOKUP__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.LOOKUP__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case UlmDsl2Package.LOOKUP__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -148,8 +182,8 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
     {
       case UlmDsl2Package.LOOKUP__NAME:
         return getName();
-      case UlmDsl2Package.LOOKUP__DESCRIPTION:
-        return getDescription();
+      case UlmDsl2Package.LOOKUP__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,8 +201,8 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
       case UlmDsl2Package.LOOKUP__NAME:
         setName((String)newValue);
         return;
-      case UlmDsl2Package.LOOKUP__DESCRIPTION:
-        setDescription((String)newValue);
+      case UlmDsl2Package.LOOKUP__TYPE:
+        setType((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,8 +221,8 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
       case UlmDsl2Package.LOOKUP__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case UlmDsl2Package.LOOKUP__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
+      case UlmDsl2Package.LOOKUP__TYPE:
+        setType((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -206,8 +240,8 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
     {
       case UlmDsl2Package.LOOKUP__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case UlmDsl2Package.LOOKUP__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case UlmDsl2Package.LOOKUP__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
@@ -225,8 +259,6 @@ public class LookupImpl extends MinimalEObjectImpl.Container implements Lookup
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", description: ");
-    result.append(description);
     result.append(')');
     return result.toString();
   }

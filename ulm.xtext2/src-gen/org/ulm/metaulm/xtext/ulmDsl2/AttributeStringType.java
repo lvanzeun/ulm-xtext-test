@@ -7,49 +7,49 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Feature Type Type</b></em>'.
+ * A representation of the model object '<em><b>Attribute String Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getType <em>Type</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#isArray <em>Array</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getLength <em>Length</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getName <em>Name</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#isArray <em>Array</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getLength <em>Length</em>}</li>
  * </ul>
  *
- * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureTypeType()
+ * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeStringType()
  * @model
  * @generated
  */
-public interface FeatureTypeType extends EObject
+public interface AttributeStringType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(FeatureType)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureTypeType_Type()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeStringType_Name()
+   * @model
    * @generated
    */
-  FeatureType getType();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setType(FeatureType value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Array</b></em>' attribute.
@@ -61,14 +61,14 @@ public interface FeatureTypeType extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Array</em>' attribute.
    * @see #setArray(boolean)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureTypeType_Array()
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeStringType_Array()
    * @model
    * @generated
    */
   boolean isArray();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#isArray <em>Array</em>}' attribute.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#isArray <em>Array</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Array</em>' attribute.
@@ -87,14 +87,14 @@ public interface FeatureTypeType extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Length</em>' attribute.
    * @see #setLength(int)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureTypeType_Length()
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getAttributeStringType_Length()
    * @model
    * @generated
    */
   int getLength();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType#getLength <em>Length</em>}' attribute.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType#getLength <em>Length</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Length</em>' attribute.
@@ -103,4 +103,4 @@ public interface FeatureTypeType extends EObject
    */
   void setLength(int value);
 
-} // FeatureTypeType
+} // AttributeStringType

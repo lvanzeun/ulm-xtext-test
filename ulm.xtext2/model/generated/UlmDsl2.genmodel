@@ -18,17 +18,23 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Context/entities"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//Attribute">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Attribute/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Attribute/desc"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//AttributeType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//AttributeType/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeType/array"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeType/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeType/name"/>
     </genClasses>
-    <genClasses ecoreClass="UlmDsl2.ecore#//BasicType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//BasicType/typeName"/>
+    <genClasses ecoreClass="UlmDsl2.ecore#//AttributeStringType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeStringType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeStringType/array"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeStringType/length"/>
+    </genClasses>
+    <genClasses ecoreClass="UlmDsl2.ecore#//AttributeDecimalType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeDecimalType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeDecimalType/array"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeDecimalType/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//AttributeDecimalType/precision"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Entity/type"/>
@@ -38,33 +44,33 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Entity/features"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//Feature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Feature/featureType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Feature/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Feature/mandatory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Feature/identifier"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Feature/alias"/>
-    </genClasses>
-    <genClasses ecoreClass="UlmDsl2.ecore#//FeatureTypeType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//FeatureTypeType/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//FeatureTypeType/array"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//FeatureTypeType/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Feature/name"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//FeatureType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//FeatureType/t"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//FeatureType/type"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//AttributeFeatureType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//AttributeFeatureType/attributeType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//AttributeFeatureType/attribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//AttributeFeatureType/lookup"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//EntityFeatureType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//EntityFeatureType/entityType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//EntityFeatureType/entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//EntityFeatureType/array"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//EntityFeatureType/length"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//Lookup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Lookup/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//Lookup/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//Lookup/type"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//LookupInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//LookupInt/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//LookupInt/values"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//LookupString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UlmDsl2.ecore#//LookupString/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UlmDsl2.ecore#//LookupString/values"/>
     </genClasses>
     <genClasses ecoreClass="UlmDsl2.ecore#//LookupIntValue">

@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getFeatureType <em>Feature Type</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getType <em>Type</em>}</li>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#isMandatory <em>Mandatory</em>}</li>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#isIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeature()
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Feature extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Feature Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Feature Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Feature Type</em>' containment reference.
-   * @see #setFeatureType(FeatureTypeType)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeature_FeatureType()
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(FeatureType)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeature_Type()
    * @model containment="true"
    * @generated
    */
-  FeatureTypeType getFeatureType();
+  FeatureType getType();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getFeatureType <em>Feature Type</em>}' containment reference.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Feature Type</em>' containment reference.
-   * @see #getFeatureType()
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
    * @generated
    */
-  void setFeatureType(FeatureTypeType value);
+  void setType(FeatureType value);
 
   /**
    * Returns the value of the '<em><b>Mandatory</b></em>' attribute.
@@ -105,29 +105,29 @@ public interface Feature extends EObject
   void setIdentifier(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Alias</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Alias</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Alias</em>' attribute.
-   * @see #setAlias(String)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeature_Alias()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeature_Name()
    * @model
    * @generated
    */
-  String getAlias();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getAlias <em>Alias</em>}' attribute.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.Feature#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Alias</em>' attribute.
-   * @see #getAlias()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setAlias(String value);
+  void setName(String value);
 
 } // Feature

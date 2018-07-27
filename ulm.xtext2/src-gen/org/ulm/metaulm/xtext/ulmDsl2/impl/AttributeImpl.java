@@ -7,13 +7,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.ulm.metaulm.xtext.ulmDsl2.Attribute;
-import org.ulm.metaulm.xtext.ulmDsl2.AttributeType;
 import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 
 /**
@@ -24,8 +24,8 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeImpl#getDesc <em>Desc</em>}</li>
  * </ul>
  *
@@ -33,16 +33,6 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  */
 public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute
 {
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected AttributeType type;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -62,6 +52,16 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected EObject type;
 
   /**
    * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -109,54 +109,6 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttributeType getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetType(AttributeType newType, NotificationChain msgs)
-  {
-    AttributeType oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(AttributeType newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.ATTRIBUTE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.ATTRIBUTE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getName()
   {
     return name;
@@ -173,6 +125,54 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObject getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(EObject newType, NotificationChain msgs)
+  {
+    EObject oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(EObject newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.ATTRIBUTE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.ATTRIBUTE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE__TYPE, newType, newType));
   }
 
   /**
@@ -224,10 +224,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE__TYPE:
-        return getType();
       case UlmDsl2Package.ATTRIBUTE__NAME:
         return getName();
+      case UlmDsl2Package.ATTRIBUTE__TYPE:
+        return getType();
       case UlmDsl2Package.ATTRIBUTE__DESC:
         return getDesc();
     }
@@ -244,11 +244,11 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE__TYPE:
-        setType((AttributeType)newValue);
-        return;
       case UlmDsl2Package.ATTRIBUTE__NAME:
         setName((String)newValue);
+        return;
+      case UlmDsl2Package.ATTRIBUTE__TYPE:
+        setType((EObject)newValue);
         return;
       case UlmDsl2Package.ATTRIBUTE__DESC:
         setDesc((String)newValue);
@@ -267,11 +267,11 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE__TYPE:
-        setType((AttributeType)null);
-        return;
       case UlmDsl2Package.ATTRIBUTE__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case UlmDsl2Package.ATTRIBUTE__TYPE:
+        setType((EObject)null);
         return;
       case UlmDsl2Package.ATTRIBUTE__DESC:
         setDesc(DESC_EDEFAULT);
@@ -290,10 +290,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE__TYPE:
-        return type != null;
       case UlmDsl2Package.ATTRIBUTE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case UlmDsl2Package.ATTRIBUTE__TYPE:
+        return type != null;
       case UlmDsl2Package.ATTRIBUTE__DESC:
         return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
     }

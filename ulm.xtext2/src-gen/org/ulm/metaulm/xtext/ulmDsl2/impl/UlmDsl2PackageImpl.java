@@ -11,15 +11,15 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ulm.metaulm.xtext.ulmDsl2.Attribute;
+import org.ulm.metaulm.xtext.ulmDsl2.AttributeDecimalType;
 import org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType;
+import org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType;
 import org.ulm.metaulm.xtext.ulmDsl2.AttributeType;
-import org.ulm.metaulm.xtext.ulmDsl2.BasicType;
 import org.ulm.metaulm.xtext.ulmDsl2.Context;
 import org.ulm.metaulm.xtext.ulmDsl2.Entity;
 import org.ulm.metaulm.xtext.ulmDsl2.EntityFeatureType;
 import org.ulm.metaulm.xtext.ulmDsl2.Feature;
 import org.ulm.metaulm.xtext.ulmDsl2.FeatureType;
-import org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType;
 import org.ulm.metaulm.xtext.ulmDsl2.Lookup;
 import org.ulm.metaulm.xtext.ulmDsl2.LookupInt;
 import org.ulm.metaulm.xtext.ulmDsl2.LookupIntValue;
@@ -70,7 +70,14 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass basicTypeEClass = null;
+  private EClass attributeStringTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeDecimalTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,13 +92,6 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * @generated
    */
   private EClass featureEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass featureTypeTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -317,9 +317,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttribute_Type()
+  public EAttribute getAttribute_Name()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -327,9 +327,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttribute_Name()
+  public EReference getAttribute_Type()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -357,9 +357,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttributeType_Type()
+  public EAttribute getAttributeType_Name()
   {
-    return (EReference)attributeTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)attributeTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -367,9 +367,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeType_Array()
+  public EClass getAttributeStringType()
   {
-    return (EAttribute)attributeTypeEClass.getEStructuralFeatures().get(1);
+    return attributeStringTypeEClass;
   }
 
   /**
@@ -377,9 +377,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeType_Length()
+  public EAttribute getAttributeStringType_Name()
   {
-    return (EAttribute)attributeTypeEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)attributeStringTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -387,9 +387,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBasicType()
+  public EAttribute getAttributeStringType_Array()
   {
-    return basicTypeEClass;
+    return (EAttribute)attributeStringTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -397,9 +397,59 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBasicType_TypeName()
+  public EAttribute getAttributeStringType_Length()
   {
-    return (EAttribute)basicTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)attributeStringTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAttributeDecimalType()
+  {
+    return attributeDecimalTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttributeDecimalType_Name()
+  {
+    return (EAttribute)attributeDecimalTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttributeDecimalType_Array()
+  {
+    return (EAttribute)attributeDecimalTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttributeDecimalType_Scale()
+  {
+    return (EAttribute)attributeDecimalTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttributeDecimalType_Precision()
+  {
+    return (EAttribute)attributeDecimalTypeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -477,7 +527,7 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFeature_FeatureType()
+  public EReference getFeature_Type()
   {
     return (EReference)featureEClass.getEStructuralFeatures().get(0);
   }
@@ -507,49 +557,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Alias()
+  public EAttribute getFeature_Name()
   {
     return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFeatureTypeType()
-  {
-    return featureTypeTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFeatureTypeType_Type()
-  {
-    return (EReference)featureTypeTypeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFeatureTypeType_Array()
-  {
-    return (EAttribute)featureTypeTypeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFeatureTypeType_Length()
-  {
-    return (EAttribute)featureTypeTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -567,7 +577,7 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFeatureType_T()
+  public EReference getFeatureType_Type()
   {
     return (EReference)featureTypeEClass.getEStructuralFeatures().get(0);
   }
@@ -587,9 +597,19 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttributeFeatureType_AttributeType()
+  public EReference getAttributeFeatureType_Attribute()
   {
     return (EReference)attributeFeatureTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttributeFeatureType_Lookup()
+  {
+    return (EReference)attributeFeatureTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -607,9 +627,29 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntityFeatureType_EntityType()
+  public EReference getEntityFeatureType_Entity()
   {
     return (EReference)entityFeatureTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEntityFeatureType_Array()
+  {
+    return (EAttribute)entityFeatureTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEntityFeatureType_Length()
+  {
+    return (EAttribute)entityFeatureTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -637,9 +677,9 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLookup_Description()
+  public EReference getLookup_Type()
   {
-    return (EAttribute)lookupEClass.getEStructuralFeatures().get(1);
+    return (EReference)lookupEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -657,9 +697,19 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getLookupInt_Description()
+  {
+    return (EAttribute)lookupIntEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getLookupInt_Values()
   {
-    return (EReference)lookupIntEClass.getEStructuralFeatures().get(0);
+    return (EReference)lookupIntEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -677,9 +727,19 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getLookupString_Description()
+  {
+    return (EAttribute)lookupStringEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getLookupString_Values()
   {
-    return (EReference)lookupStringEClass.getEStructuralFeatures().get(0);
+    return (EReference)lookupStringEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -784,17 +844,23 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
     createEReference(contextEClass, CONTEXT__ENTITIES);
 
     attributeEClass = createEClass(ATTRIBUTE);
-    createEReference(attributeEClass, ATTRIBUTE__TYPE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+    createEReference(attributeEClass, ATTRIBUTE__TYPE);
     createEAttribute(attributeEClass, ATTRIBUTE__DESC);
 
     attributeTypeEClass = createEClass(ATTRIBUTE_TYPE);
-    createEReference(attributeTypeEClass, ATTRIBUTE_TYPE__TYPE);
-    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__ARRAY);
-    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__LENGTH);
+    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__NAME);
 
-    basicTypeEClass = createEClass(BASIC_TYPE);
-    createEAttribute(basicTypeEClass, BASIC_TYPE__TYPE_NAME);
+    attributeStringTypeEClass = createEClass(ATTRIBUTE_STRING_TYPE);
+    createEAttribute(attributeStringTypeEClass, ATTRIBUTE_STRING_TYPE__NAME);
+    createEAttribute(attributeStringTypeEClass, ATTRIBUTE_STRING_TYPE__ARRAY);
+    createEAttribute(attributeStringTypeEClass, ATTRIBUTE_STRING_TYPE__LENGTH);
+
+    attributeDecimalTypeEClass = createEClass(ATTRIBUTE_DECIMAL_TYPE);
+    createEAttribute(attributeDecimalTypeEClass, ATTRIBUTE_DECIMAL_TYPE__NAME);
+    createEAttribute(attributeDecimalTypeEClass, ATTRIBUTE_DECIMAL_TYPE__ARRAY);
+    createEAttribute(attributeDecimalTypeEClass, ATTRIBUTE_DECIMAL_TYPE__SCALE);
+    createEAttribute(attributeDecimalTypeEClass, ATTRIBUTE_DECIMAL_TYPE__PRECISION);
 
     entityEClass = createEClass(ENTITY);
     createEAttribute(entityEClass, ENTITY__TYPE);
@@ -804,33 +870,33 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
     createEReference(entityEClass, ENTITY__FEATURES);
 
     featureEClass = createEClass(FEATURE);
-    createEReference(featureEClass, FEATURE__FEATURE_TYPE);
+    createEReference(featureEClass, FEATURE__TYPE);
     createEAttribute(featureEClass, FEATURE__MANDATORY);
     createEAttribute(featureEClass, FEATURE__IDENTIFIER);
-    createEAttribute(featureEClass, FEATURE__ALIAS);
-
-    featureTypeTypeEClass = createEClass(FEATURE_TYPE_TYPE);
-    createEReference(featureTypeTypeEClass, FEATURE_TYPE_TYPE__TYPE);
-    createEAttribute(featureTypeTypeEClass, FEATURE_TYPE_TYPE__ARRAY);
-    createEAttribute(featureTypeTypeEClass, FEATURE_TYPE_TYPE__LENGTH);
+    createEAttribute(featureEClass, FEATURE__NAME);
 
     featureTypeEClass = createEClass(FEATURE_TYPE);
-    createEReference(featureTypeEClass, FEATURE_TYPE__T);
+    createEReference(featureTypeEClass, FEATURE_TYPE__TYPE);
 
     attributeFeatureTypeEClass = createEClass(ATTRIBUTE_FEATURE_TYPE);
-    createEReference(attributeFeatureTypeEClass, ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE);
+    createEReference(attributeFeatureTypeEClass, ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE);
+    createEReference(attributeFeatureTypeEClass, ATTRIBUTE_FEATURE_TYPE__LOOKUP);
 
     entityFeatureTypeEClass = createEClass(ENTITY_FEATURE_TYPE);
-    createEReference(entityFeatureTypeEClass, ENTITY_FEATURE_TYPE__ENTITY_TYPE);
+    createEReference(entityFeatureTypeEClass, ENTITY_FEATURE_TYPE__ENTITY);
+    createEAttribute(entityFeatureTypeEClass, ENTITY_FEATURE_TYPE__ARRAY);
+    createEAttribute(entityFeatureTypeEClass, ENTITY_FEATURE_TYPE__LENGTH);
 
     lookupEClass = createEClass(LOOKUP);
     createEAttribute(lookupEClass, LOOKUP__NAME);
-    createEAttribute(lookupEClass, LOOKUP__DESCRIPTION);
+    createEReference(lookupEClass, LOOKUP__TYPE);
 
     lookupIntEClass = createEClass(LOOKUP_INT);
+    createEAttribute(lookupIntEClass, LOOKUP_INT__DESCRIPTION);
     createEReference(lookupIntEClass, LOOKUP_INT__VALUES);
 
     lookupStringEClass = createEClass(LOOKUP_STRING);
+    createEAttribute(lookupStringEClass, LOOKUP_STRING__DESCRIPTION);
     createEReference(lookupStringEClass, LOOKUP_STRING__VALUES);
 
     lookupIntValueEClass = createEClass(LOOKUP_INT_VALUE);
@@ -871,8 +937,6 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    lookupIntEClass.getESuperTypes().add(this.getLookup());
-    lookupStringEClass.getESuperTypes().add(this.getLookup());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -887,17 +951,23 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
     initEReference(getContext_Entities(), this.getEntity(), null, "entities", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttribute_Type(), this.getAttributeType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeTypeEClass, AttributeType.class, "AttributeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttributeType_Type(), this.getBasicType(), null, "type", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttributeType_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttributeType_Length(), ecorePackage.getEInt(), "length", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(basicTypeEClass, BasicType.class, "BasicType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBasicType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, BasicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(attributeStringTypeEClass, AttributeStringType.class, "AttributeStringType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttributeStringType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeStringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeStringType_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, AttributeStringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeStringType_Length(), ecorePackage.getEInt(), "length", null, 0, 1, AttributeStringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributeDecimalTypeEClass, AttributeDecimalType.class, "AttributeDecimalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttributeDecimalType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeDecimalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeDecimalType_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, AttributeDecimalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeDecimalType_Scale(), ecorePackage.getEInt(), "scale", null, 0, 1, AttributeDecimalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeDecimalType_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, AttributeDecimalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntity_Type(), ecorePackage.getEString(), "type", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -907,33 +977,33 @@ public class UlmDsl2PackageImpl extends EPackageImpl implements UlmDsl2Package
     initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFeature_FeatureType(), this.getFeatureTypeType(), null, "featureType", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeature_Type(), this.getFeatureType(), null, "type", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeature_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeature_Identifier(), ecorePackage.getEBoolean(), "identifier", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeature_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureTypeTypeEClass, FeatureTypeType.class, "FeatureTypeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFeatureTypeType_Type(), this.getFeatureType(), null, "type", null, 0, 1, FeatureTypeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureTypeType_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, FeatureTypeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureTypeType_Length(), ecorePackage.getEInt(), "length", null, 0, 1, FeatureTypeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureTypeEClass, FeatureType.class, "FeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFeatureType_T(), ecorePackage.getEObject(), null, "t", null, 0, 1, FeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeatureType_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, FeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeFeatureTypeEClass, AttributeFeatureType.class, "AttributeFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttributeFeatureType_AttributeType(), this.getAttribute(), null, "attributeType", null, 0, 1, AttributeFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeFeatureType_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, AttributeFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeFeatureType_Lookup(), this.getLookup(), null, "lookup", null, 0, 1, AttributeFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityFeatureTypeEClass, EntityFeatureType.class, "EntityFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntityFeatureType_EntityType(), this.getEntity(), null, "entityType", null, 0, 1, EntityFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityFeatureType_Entity(), this.getEntity(), null, "entity", null, 0, 1, EntityFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntityFeatureType_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, EntityFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntityFeatureType_Length(), ecorePackage.getEInt(), "length", null, 0, 1, EntityFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lookupEClass, Lookup.class, "Lookup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLookup_Name(), ecorePackage.getEString(), "name", null, 0, 1, Lookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLookup_Description(), ecorePackage.getEString(), "description", null, 0, 1, Lookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLookup_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, Lookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lookupIntEClass, LookupInt.class, "LookupInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLookupInt_Description(), ecorePackage.getEString(), "description", null, 0, 1, LookupInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLookupInt_Values(), this.getLookupIntValue(), null, "values", null, 0, -1, LookupInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lookupStringEClass, LookupString.class, "LookupString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLookupString_Description(), ecorePackage.getEString(), "description", null, 0, 1, LookupString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLookupString_Values(), this.getLookupStringValue(), null, "values", null, 0, -1, LookupString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lookupIntValueEClass, LookupIntValue.class, "LookupIntValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

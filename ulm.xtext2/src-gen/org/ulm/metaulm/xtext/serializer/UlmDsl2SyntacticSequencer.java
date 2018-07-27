@@ -24,7 +24,6 @@ public class UlmDsl2SyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Context___AttributesKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q;
 	protected AbstractElementAlias match_Context___EntitiesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q;
 	protected AbstractElementAlias match_Context___LookupsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
-	protected AbstractElementAlias match_Entity___FeaturesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -32,7 +31,6 @@ public class UlmDsl2SyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Context___AttributesKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContextAccess().getAttributesKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getContextAccess().getLeftCurlyBracketKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getContextAccess().getRightCurlyBracketKeyword_4_3()));
 		match_Context___EntitiesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContextAccess().getEntitiesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getContextAccess().getLeftCurlyBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getContextAccess().getRightCurlyBracketKeyword_6_3()));
 		match_Context___LookupsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContextAccess().getLookupsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getContextAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getContextAccess().getRightCurlyBracketKeyword_5_3()));
-		match_Entity___FeaturesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntityAccess().getFeaturesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_3()));
 	}
 	
 	@Override
@@ -53,8 +51,6 @@ public class UlmDsl2SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Context___EntitiesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Context___LookupsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
 				emit_Context___LookupsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Entity___FeaturesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q.equals(syntax))
-				emit_Entity___FeaturesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -96,19 +92,6 @@ public class UlmDsl2SyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     version=Version '{' ('attributes' '{' '}')? (ambiguity) ('entities' '{' '}')? '}' (rule end)
 	 */
 	protected void emit_Context___LookupsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('features' '{' '}')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     desc=STRING '{' (ambiguity) '}' (rule end)
-	 *     name=ID '{' (ambiguity) '}' (rule end)
-	 *     superType=[Entity|ID] '{' (ambiguity) '}' (rule end)
-	 */
-	protected void emit_Entity___FeaturesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -4,16 +4,13 @@
 package org.ulm.metaulm.xtext.ulmDsl2.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.ulm.metaulm.xtext.ulmDsl2.AttributeType;
-import org.ulm.metaulm.xtext.ulmDsl2.BasicType;
 import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 
 /**
@@ -24,9 +21,7 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeTypeImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeTypeImpl#isArray <em>Array</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeTypeImpl#getLength <em>Length</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,54 +29,24 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements AttributeType
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected BasicType type;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #isArray() <em>Array</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isArray()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final boolean ARRAY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isArray() <em>Array</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isArray()
-   * @generated
-   * @ordered
-   */
-  protected boolean array = ARRAY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLength()
-   * @generated
-   * @ordered
-   */
-  protected static final int LENGTH_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLength()
-   * @generated
-   * @ordered
-   */
-  protected int length = LENGTH_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,9 +74,9 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType getType()
+  public String getName()
   {
-    return type;
+    return name;
   }
 
   /**
@@ -119,99 +84,12 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(BasicType newType, NotificationChain msgs)
+  public void setName(String newName)
   {
-    BasicType oldType = type;
-    type = newType;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_TYPE__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(BasicType newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.ATTRIBUTE_TYPE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.ATTRIBUTE_TYPE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_TYPE__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isArray()
-  {
-    return array;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setArray(boolean newArray)
-  {
-    boolean oldArray = array;
-    array = newArray;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_TYPE__ARRAY, oldArray, array));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getLength()
-  {
-    return length;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLength(int newLength)
-  {
-    int oldLength = length;
-    length = newLength;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_TYPE__LENGTH, oldLength, length));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case UlmDsl2Package.ATTRIBUTE_TYPE__TYPE:
-        return basicSetType(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_TYPE__NAME, oldName, name));
   }
 
   /**
@@ -224,12 +102,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_TYPE__TYPE:
-        return getType();
-      case UlmDsl2Package.ATTRIBUTE_TYPE__ARRAY:
-        return isArray();
-      case UlmDsl2Package.ATTRIBUTE_TYPE__LENGTH:
-        return getLength();
+      case UlmDsl2Package.ATTRIBUTE_TYPE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -244,14 +118,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_TYPE__TYPE:
-        setType((BasicType)newValue);
-        return;
-      case UlmDsl2Package.ATTRIBUTE_TYPE__ARRAY:
-        setArray((Boolean)newValue);
-        return;
-      case UlmDsl2Package.ATTRIBUTE_TYPE__LENGTH:
-        setLength((Integer)newValue);
+      case UlmDsl2Package.ATTRIBUTE_TYPE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -267,14 +135,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_TYPE__TYPE:
-        setType((BasicType)null);
-        return;
-      case UlmDsl2Package.ATTRIBUTE_TYPE__ARRAY:
-        setArray(ARRAY_EDEFAULT);
-        return;
-      case UlmDsl2Package.ATTRIBUTE_TYPE__LENGTH:
-        setLength(LENGTH_EDEFAULT);
+      case UlmDsl2Package.ATTRIBUTE_TYPE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -290,12 +152,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_TYPE__TYPE:
-        return type != null;
-      case UlmDsl2Package.ATTRIBUTE_TYPE__ARRAY:
-        return array != ARRAY_EDEFAULT;
-      case UlmDsl2Package.ATTRIBUTE_TYPE__LENGTH:
-        return length != LENGTH_EDEFAULT;
+      case UlmDsl2Package.ATTRIBUTE_TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -311,10 +169,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (array: ");
-    result.append(array);
-    result.append(", length: ");
-    result.append(length);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

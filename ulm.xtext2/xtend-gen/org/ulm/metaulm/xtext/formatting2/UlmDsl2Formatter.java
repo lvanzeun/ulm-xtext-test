@@ -19,7 +19,6 @@ import org.ulm.metaulm.xtext.ulmDsl2.Attribute;
 import org.ulm.metaulm.xtext.ulmDsl2.Context;
 import org.ulm.metaulm.xtext.ulmDsl2.Entity;
 import org.ulm.metaulm.xtext.ulmDsl2.Lookup;
-import org.ulm.metaulm.xtext.ulmDsl2.Model;
 
 @SuppressWarnings("all")
 public class UlmDsl2Formatter extends AbstractFormatter2 {
@@ -27,88 +26,103 @@ public class UlmDsl2Formatter extends AbstractFormatter2 {
   @Extension
   private UlmDsl2GrammarAccess _ulmDsl2GrammarAccess;
   
-  protected void _format(final Model model, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.indent();
-    };
-    document.<ISemanticRegion, ISemanticRegion>interior(
-      this.textRegionExtensions.regionFor(model).keyword("{"), 
-      this.textRegionExtensions.regionFor(model).keyword("}"), _function);
-    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.append(this.textRegionExtensions.regionFor(model).keyword("{"), _function_1);
-    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.prepend(this.textRegionExtensions.regionFor(model).keyword("}"), _function_2);
-    EList<Context> _contexts = model.getContexts();
-    for (final Context context : _contexts) {
-      document.<Context>format(context);
-    }
-  }
-  
   protected void _format(final Context context, @Extension final IFormattableDocument document) {
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.indent();
+      it.oneSpace();
     };
-    document.<ISemanticRegion, ISemanticRegion>interior(
-      this.textRegionExtensions.regionFor(context).keyword("{"), 
-      this.textRegionExtensions.regionFor(context).keyword("}"), _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.append(this.textRegionExtensions.regionFor(context).keyword("{"), _function_1);
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.prepend(this.textRegionExtensions.regionFor(context).keyword("}"), _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(
+      document.append(document.prepend(this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getLeftCurlyBracketKeyword_3()), _function), _function_1), 
+      document.prepend(this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getRightCurlyBracketKeyword_7()), _function_2), _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(
+      this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getLeftCurlyBracketKeyword_4_1()), 
+      document.append(this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getRightCurlyBracketKeyword_4_3()), _function_4), _function_5);
+    final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(document.prepend(this.textRegionExtensions.regionFor(context).keyword("attributes"), _function_6), _function_7);
     EList<Attribute> _attributes = context.getAttributes();
     for (final Attribute attribute : _attributes) {
       document.<Attribute>format(attribute);
     }
+    final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_9 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(
+      this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getLeftCurlyBracketKeyword_5_1()), 
+      document.append(this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getRightCurlyBracketKeyword_5_3()), _function_8), _function_9);
+    final Procedure1<IHiddenRegionFormatter> _function_10 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_11 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(document.prepend(this.textRegionExtensions.regionFor(context).keyword("lookups"), _function_10), _function_11);
     EList<Lookup> _lookups = context.getLookups();
     for (final Lookup lookup : _lookups) {
       document.<Lookup>format(lookup);
     }
+    final Procedure1<IHiddenRegionFormatter> _function_12 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_13 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(
+      this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getLeftCurlyBracketKeyword_6_1()), 
+      document.append(this.textRegionExtensions.regionFor(context).keyword(this._ulmDsl2GrammarAccess.getContextAccess().getRightCurlyBracketKeyword_6_3()), _function_12), _function_13);
+    final Procedure1<IHiddenRegionFormatter> _function_14 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_15 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(document.prepend(this.textRegionExtensions.regionFor(context).keyword("entities"), _function_14), _function_15);
     EList<Entity> _entities = context.getEntities();
     for (final Entity entity : _entities) {
       document.<Entity>format(entity);
     }
   }
   
-  protected void _format(final Attribute attribute, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.append(this.textRegionExtensions.regionFor(attribute).keyword(";"), _function);
-  }
-  
-  public void format(final Object attribute, final IFormattableDocument document) {
-    if (attribute instanceof XtextResource) {
-      _format((XtextResource)attribute, document);
+  public void format(final Object context, final IFormattableDocument document) {
+    if (context instanceof XtextResource) {
+      _format((XtextResource)context, document);
       return;
-    } else if (attribute instanceof Attribute) {
-      _format((Attribute)attribute, document);
+    } else if (context instanceof Context) {
+      _format((Context)context, document);
       return;
-    } else if (attribute instanceof Context) {
-      _format((Context)attribute, document);
+    } else if (context instanceof EObject) {
+      _format((EObject)context, document);
       return;
-    } else if (attribute instanceof Model) {
-      _format((Model)attribute, document);
-      return;
-    } else if (attribute instanceof EObject) {
-      _format((EObject)attribute, document);
-      return;
-    } else if (attribute == null) {
+    } else if (context == null) {
       _format((Void)null, document);
       return;
-    } else if (attribute != null) {
-      _format(attribute, document);
+    } else if (context != null) {
+      _format(context, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(attribute, document).toString());
+        Arrays.<Object>asList(context, document).toString());
     }
   }
 }

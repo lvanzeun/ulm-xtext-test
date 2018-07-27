@@ -4,44 +4,51 @@
 package org.ulm.metaulm.xtext.ulmDsl2.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.ulm.metaulm.xtext.ulmDsl2.FeatureType;
-import org.ulm.metaulm.xtext.ulmDsl2.FeatureTypeType;
+import org.ulm.metaulm.xtext.ulmDsl2.AttributeStringType;
 import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Feature Type Type</b></em>'.
+ * An implementation of the model object '<em><b>Attribute String Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl#isArray <em>Array</em>}</li>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.FeatureTypeTypeImpl#getLength <em>Length</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl#isArray <em>Array</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeStringTypeImpl#getLength <em>Length</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements FeatureTypeType
+public class AttributeStringTypeImpl extends MinimalEObjectImpl.Container implements AttributeStringType
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected FeatureType type;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #isArray() <em>Array</em>}' attribute.
@@ -88,7 +95,7 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeatureTypeTypeImpl()
+  protected AttributeStringTypeImpl()
   {
     super();
   }
@@ -101,7 +108,7 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return UlmDsl2Package.Literals.FEATURE_TYPE_TYPE;
+    return UlmDsl2Package.Literals.ATTRIBUTE_STRING_TYPE;
   }
 
   /**
@@ -109,9 +116,9 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureType getType()
+  public String getName()
   {
-    return type;
+    return name;
   }
 
   /**
@@ -119,37 +126,12 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(FeatureType newType, NotificationChain msgs)
+  public void setName(String newName)
   {
-    FeatureType oldType = type;
-    type = newType;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(FeatureType newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_STRING_TYPE__NAME, oldName, name));
   }
 
   /**
@@ -172,7 +154,7 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
     boolean oldArray = array;
     array = newArray;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE_TYPE__ARRAY, oldArray, array));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_STRING_TYPE__ARRAY, oldArray, array));
   }
 
   /**
@@ -195,23 +177,7 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
     int oldLength = length;
     length = newLength;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.FEATURE_TYPE_TYPE__LENGTH, oldLength, length));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE:
-        return basicSetType(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_STRING_TYPE__LENGTH, oldLength, length));
   }
 
   /**
@@ -224,11 +190,11 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE:
-        return getType();
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__ARRAY:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__NAME:
+        return getName();
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__ARRAY:
         return isArray();
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__LENGTH:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__LENGTH:
         return getLength();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -244,13 +210,13 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE:
-        setType((FeatureType)newValue);
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__NAME:
+        setName((String)newValue);
         return;
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__ARRAY:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__ARRAY:
         setArray((Boolean)newValue);
         return;
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__LENGTH:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__LENGTH:
         setLength((Integer)newValue);
         return;
     }
@@ -267,13 +233,13 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE:
-        setType((FeatureType)null);
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__ARRAY:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__ARRAY:
         setArray(ARRAY_EDEFAULT);
         return;
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__LENGTH:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__LENGTH:
         setLength(LENGTH_EDEFAULT);
         return;
     }
@@ -290,11 +256,11 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__TYPE:
-        return type != null;
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__ARRAY:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__ARRAY:
         return array != ARRAY_EDEFAULT;
-      case UlmDsl2Package.FEATURE_TYPE_TYPE__LENGTH:
+      case UlmDsl2Package.ATTRIBUTE_STRING_TYPE__LENGTH:
         return length != LENGTH_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -311,7 +277,9 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (array: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", array: ");
     result.append(array);
     result.append(", length: ");
     result.append(length);
@@ -319,4 +287,4 @@ public class FeatureTypeTypeImpl extends MinimalEObjectImpl.Container implements
     return result.toString();
   }
 
-} //FeatureTypeTypeImpl
+} //AttributeStringTypeImpl

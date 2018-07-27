@@ -24,56 +24,54 @@ Version:
 	INT '.' INT '.' INT;
 
 Attribute:
-	'attribute' type=AttributeType name=ID (desc=STRING)? ';';
+	name=ID type=(AttributeType | AttributeStringType | AttributeDecimalType ) (desc=STRING)? ';';
 
 AttributeType:
-	type=BasicType (array?='[' (length=INT)? ']')?;
+	name=( 'int' | 'boolean' | 'date' | 'datetime' | 'timestamp' );
 
-BasicType:
-	typeName=('string' | 'int' | 'decimal' | 'boolean' | 'date' | 'datetime' | 'timestamp');
+AttributeStringType:
+	name='string' (array?='[' length=INT ']')?;
+	
+AttributeDecimalType:
+	name='decimal' (array?='[' scale=INT (',' precision=INT)? ']')?;
 
 Entity:
-	type=('data' | 'static' | 'lookup')? 'entity' name=ID (desc=STRING)? ('extends' superType=[Entity])? '{'
-	('features' '{'
+	type=('data' | 'static' | 'lookup')? name=ID (desc=STRING)? ('extends' superType=[Entity])? '{'
 	features+=Feature*
-	'}')?
 	'}';
 
 Feature:
-	featureType=FeatureTypeType
+	type=FeatureType
 	(mandatory?='mandatory')?
 	(identifier?='identifier')?
-	('as' alias=ID)?
+	('as' name=ID)?
 	';';
 
-FeatureTypeType:
-	type=FeatureType (array?='[' (length=INT)? ']')?;
-
 FeatureType:
-	'feature' t=(AttributeFeatureType | EntityFeatureType);
+	type=(AttributeFeatureType | EntityFeatureType);
 
 AttributeFeatureType:
-	'attribute' attributeType=[Attribute];
+	attribute=[Attribute] ('bounded' lookup=[Lookup])?;
 
 EntityFeatureType:
-	'entity' entityType=[Entity];
+	'references' entity=[Entity]  (array?='[' (length=INT)? ']')?;
 	
 Lookup:
-	'lookup' (LookupInt | LookupString)
+	name=ID type=(LookupInt | LookupString)
 ;
 
 LookupInt:
-	'integer' name=ID (description=STRING)? 'values' '{' values+=LookupIntValue ( "," values+=LookupIntValue)* '}' ';' 
+	'integer' (description=STRING)? 'values' '{' values+=LookupIntValue ( "," values+=LookupIntValue)* '}' ';' 
 ;
 
 LookupString:
-	'string' name=ID (description=STRING)? 'values' '{' values+=LookupStringValue ( "," values+=LookupStringValue)* '}' ';' 
+	'string' (description=STRING)? 'values' '{' values+=LookupStringValue ( "," values+=LookupStringValue)* '}' ';' 
 ;
 
 LookupIntValue:
 	{LookupIntValue}
-	'(' value=INT description=STRING ')';
+	'(' value=INT ':' description=STRING ')';
 
 LookupStringValue:
 	{LookupStringValue}
-	'(' value=STRING description=STRING	')';
+	'(' value=STRING ':' description=STRING	')';

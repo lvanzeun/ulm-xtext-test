@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.ulm.metaulm.xtext.ulmDsl2.Attribute;
 import org.ulm.metaulm.xtext.ulmDsl2.AttributeFeatureType;
+import org.ulm.metaulm.xtext.ulmDsl2.Lookup;
 import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 
 /**
@@ -23,7 +24,8 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeFeatureTypeImpl#getAttributeType <em>Attribute Type</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeFeatureTypeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.impl.AttributeFeatureTypeImpl#getLookup <em>Lookup</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +33,24 @@ import org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package;
 public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container implements AttributeFeatureType
 {
   /**
-   * The cached value of the '{@link #getAttributeType() <em>Attribute Type</em>}' reference.
+   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAttributeType()
+   * @see #getAttribute()
    * @generated
    * @ordered
    */
-  protected Attribute attributeType;
+  protected Attribute attribute;
+
+  /**
+   * The cached value of the '{@link #getLookup() <em>Lookup</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLookup()
+   * @generated
+   * @ordered
+   */
+  protected Lookup lookup;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,19 +78,19 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public Attribute getAttributeType()
+  public Attribute getAttribute()
   {
-    if (attributeType != null && attributeType.eIsProxy())
+    if (attribute != null && attribute.eIsProxy())
     {
-      InternalEObject oldAttributeType = (InternalEObject)attributeType;
-      attributeType = (Attribute)eResolveProxy(oldAttributeType);
-      if (attributeType != oldAttributeType)
+      InternalEObject oldAttribute = (InternalEObject)attribute;
+      attribute = (Attribute)eResolveProxy(oldAttribute);
+      if (attribute != oldAttribute)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE, oldAttributeType, attributeType));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE, oldAttribute, attribute));
       }
     }
-    return attributeType;
+    return attribute;
   }
 
   /**
@@ -86,9 +98,9 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public Attribute basicGetAttributeType()
+  public Attribute basicGetAttribute()
   {
-    return attributeType;
+    return attribute;
   }
 
   /**
@@ -96,12 +108,55 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAttributeType(Attribute newAttributeType)
+  public void setAttribute(Attribute newAttribute)
   {
-    Attribute oldAttributeType = attributeType;
-    attributeType = newAttributeType;
+    Attribute oldAttribute = attribute;
+    attribute = newAttribute;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE, oldAttributeType, attributeType));
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE, oldAttribute, attribute));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Lookup getLookup()
+  {
+    if (lookup != null && lookup.eIsProxy())
+    {
+      InternalEObject oldLookup = (InternalEObject)lookup;
+      lookup = (Lookup)eResolveProxy(oldLookup);
+      if (lookup != oldLookup)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__LOOKUP, oldLookup, lookup));
+      }
+    }
+    return lookup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Lookup basicGetLookup()
+  {
+    return lookup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLookup(Lookup newLookup)
+  {
+    Lookup oldLookup = lookup;
+    lookup = newLookup;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__LOOKUP, oldLookup, lookup));
   }
 
   /**
@@ -114,9 +169,12 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE:
-        if (resolve) return getAttributeType();
-        return basicGetAttributeType();
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE:
+        if (resolve) return getAttribute();
+        return basicGetAttribute();
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__LOOKUP:
+        if (resolve) return getLookup();
+        return basicGetLookup();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -131,8 +189,11 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE:
-        setAttributeType((Attribute)newValue);
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE:
+        setAttribute((Attribute)newValue);
+        return;
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__LOOKUP:
+        setLookup((Lookup)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,8 +209,11 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE:
-        setAttributeType((Attribute)null);
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE:
+        setAttribute((Attribute)null);
+        return;
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__LOOKUP:
+        setLookup((Lookup)null);
         return;
     }
     super.eUnset(featureID);
@@ -165,8 +229,10 @@ public class AttributeFeatureTypeImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE_TYPE:
-        return attributeType != null;
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__ATTRIBUTE:
+        return attribute != null;
+      case UlmDsl2Package.ATTRIBUTE_FEATURE_TYPE__LOOKUP:
+        return lookup != null;
     }
     return super.eIsSet(featureID);
   }

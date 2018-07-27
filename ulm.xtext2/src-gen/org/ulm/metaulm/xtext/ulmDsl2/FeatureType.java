@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getT <em>T</em>}</li>
+ *   <li>{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureType()
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface FeatureType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>T</b></em>' containment reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>T</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>T</em>' containment reference.
-   * @see #setT(EObject)
-   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureType_T()
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(EObject)
+   * @see org.ulm.metaulm.xtext.ulmDsl2.UlmDsl2Package#getFeatureType_Type()
    * @model containment="true"
    * @generated
    */
-  EObject getT();
+  EObject getType();
 
   /**
-   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getT <em>T</em>}' containment reference.
+   * Sets the value of the '{@link org.ulm.metaulm.xtext.ulmDsl2.FeatureType#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>T</em>' containment reference.
-   * @see #getT()
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
    * @generated
    */
-  void setT(EObject value);
+  void setType(EObject value);
 
 } // FeatureType

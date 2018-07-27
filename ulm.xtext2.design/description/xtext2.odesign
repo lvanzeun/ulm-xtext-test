@@ -5,7 +5,7 @@
       <metamodel href="http://www.eclipse.org/xtext/xbase/Xtype#/"/>
       <metamodel href="http://org.mycorp/ulm/metaulm/xtext/UlmDsl2#/"/>
       <defaultLayer name="Default">
-        <edgeMappings name="EntityEntityFeatureRelation" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.features.featureType.type.t.entityType">
+        <edgeMappings name="EntityEntityFeatureRelation" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.features">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false">
@@ -22,7 +22,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="EntityContainer" labelDirectEdit="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeEntityName']" domainClass="ulmDsl2::Entity" childrenPresentation="List">
-          <subNodeMappings name="AttributeFeatureTypeNode" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="ulmDsl2::AttributeFeatureType">
+          <subNodeMappings name="AttributeFeatureNode" semanticCandidatesExpression="service:getNameOrAlias" domainClass="ulmDsl2::AttributeFeatureType">
             <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="[self.getNameOrAlias()/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -44,7 +44,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.contexts->first()/]">
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="entities">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().entities->size().toString()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().oclAsType(ulmDsl2::Context).entities->size().toString()"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'data'"/>
                   </subModelOperations>
                 </subModelOperations>
@@ -58,7 +58,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.contexts->first()/]">
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="entities">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().entities->size().toString()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().oclAsType(ulmDsl2::Context).entities->size().toString()"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'lookup'"/>
                   </subModelOperations>
                 </subModelOperations>
@@ -72,7 +72,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.contexts->first()/]">
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Entity" referenceName="entities">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().entities->size().toString()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Entity'+instance.eContainer().oclAsType(ulmDsl2::Context).entities->size().toString()"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'static'"/>
                   </subModelOperations>
                 </subModelOperations>
@@ -105,7 +105,17 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="features" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::Feature" referenceName="features" variableName="featureInstance">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:featureInstance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::FeatureType" referenceName="type" variableName="featureTypeInstance">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:featureTypeInstance">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ulmDsl2::EntityFeatureType" referenceName="type" variableName="entityFeatureTypeInstance">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:target"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -152,7 +162,7 @@
       <metamodel href="http://org.mycorp/ulm/metaulm/xtext/UlmDsl2#/"/>
       <metamodel href="http://www.eclipse.org/xtext/xbase/Xtype#/"/>
       <ownedLineMappings name="AttributeLine" label="AttributeAttributeLine" domainClass="ulmDsl2::Attribute" semanticCandidatesExpression="aql:self.contexts->first().attributes" headerLabelExpression="feature:name"/>
-      <ownedColumnMappings name="TypeCol" headerLabelExpression="Type" featureName="type" labelExpression="aql:self.type.type.typeName"/>
+      <ownedColumnMappings name="ColType" label="Type" headerLabelExpression="Type" featureName="type" labelExpression="service:getAttributeTypeAsString"/>
       <ownedColumnMappings name="ColDesc" label="Description" headerLabelExpression="Description" featureName="desc" labelExpression="aql:self.desc"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.ulm.xtext2.design.Services"/>
