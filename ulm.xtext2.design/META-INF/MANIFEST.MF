@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
  ulm.xtext2;bundle-version="1.0.0"
+Export-Package: org.ulm.xtext2.design
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
