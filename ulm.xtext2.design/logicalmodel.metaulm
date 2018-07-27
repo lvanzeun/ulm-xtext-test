@@ -17,7 +17,7 @@ model Entity {
 			Entity1 extends Entity2 {
 				attr1 mandatory;
 				references Entity9[1];
-			}
+			references Entity16 ; }
 			Entity2 {
 				references Entity4 identifier as zeEntity;
 				attr1 as AliasToAttr1;
@@ -41,9 +41,9 @@ model Entity {
 			data Entity8 {
 			}
 			data Entity11 {
-			}
+			references Entity16 ; }
 			data Entity10 extends Entity1 {
-			}
+			references Entity16 ; references Entity14 ; }
 			data Entity13 {
 			}
 			lookup Entity14 {

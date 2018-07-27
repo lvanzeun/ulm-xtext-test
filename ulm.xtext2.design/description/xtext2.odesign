@@ -8,7 +8,8 @@
         <edgeMappings name="EntityEntityFeatureRelation" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.features.type.type.entity">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.features.type.type.entity.name">
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.getNameOrAlias(view.targetNode.target)">
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -16,14 +17,15 @@
         <edgeMappings name="EntityEntityExtendRelation" deletionDescription="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteSuperType']" sourceMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetMapping="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']" targetFinderExpression="aql:self.superType" reconnections="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectSuperType']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription showIcon="false" labelExpression="extends">
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <containerMappings name="EntityContainer" labelDirectEdit="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeEntityName']" domainClass="ulmDsl2::Entity" childrenPresentation="List">
           <subNodeMappings name="AttributeFeatureNode" semanticCandidatesExpression="[self.features.eAllContents()/]" domainClass="ulmDsl2::AttributeFeatureType">
-            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="[self.getNameOrAlias()/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="service:getNameOrAlias" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
