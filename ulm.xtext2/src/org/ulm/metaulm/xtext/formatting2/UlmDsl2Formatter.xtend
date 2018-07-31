@@ -38,28 +38,28 @@ class UlmDsl2Formatter extends AbstractFormatter2 {
 		)[indent]
 
 		interior(
-			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_4_1),
-			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_4_3).append[newLine]
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_4_1).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_4_3).prepend[newLine]
 		)[indent]
-		context.regionFor.keyword("attributes").prepend[newLine].append[oneSpace]
+		context.regionFor.keyword("attributes")
 		for (Attribute attribute : context.getAttributes()) {
 			attribute.format;
 		}
-
+ 
 		interior(
-			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_5_1),
-			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_5_3).append[newLine]
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_5_1).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_5_3).prepend[newLine]
 		)[indent]
-		context.regionFor.keyword("lookups").prepend[newLine].append[oneSpace]
+		context.regionFor.keyword("lookups")
 		for (Lookup lookup : context.getLookups()) {
 			lookup.format;
 		}
 
 		interior(
-			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_6_1),
-			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_6_3).append[newLine]
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_6_1).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_6_3).prepend[newLine]
 		)[indent]
-		context.regionFor.keyword("entities").prepend[newLine].append[oneSpace]
+		context.regionFor.keyword("entities")
 		for (Entity entity : context.getEntities()) {
 			entity.format;
 		}
