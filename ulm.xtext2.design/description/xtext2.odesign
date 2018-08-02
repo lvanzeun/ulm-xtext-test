@@ -23,7 +23,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="EntityContainer" labelDirectEdit="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeEntityName']" domainClass="ulmDsl2::Entity" childrenPresentation="List">
+        <containerMappings name="EntityContainer" labelDirectEdit="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeEntityName']" domainClass="ulmDsl2::Entity" dropDescriptions="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropAttribute']" childrenPresentation="List">
           <subNodeMappings name="AttributeFeatureNode" semanticCandidatesExpression="[self.features.eAllContents()/]" domainClass="ulmDsl2::AttributeFeatureType">
             <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="service:getNameOrAlias" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -86,6 +86,13 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropAttribute" forceRefresh="true" mappings="//@ownedViewpoints[name='MetaUlmViewpoint']/@ownedRepresentations[name='MetaulmDiagram']/@defaultLayer/@containerMappings[name='EntityContainer']/@subNodeMappings[name='AttributeFeatureNode']">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation/>
           </ownedTools>
         </toolSections>
         <toolSections name="Relationships">

@@ -2,7 +2,7 @@ model Entity {
 	
 	context simple_context 1.2.3 {
 	attributes {
-			attr1 string "Simple bloody description";
+			attr1 string "Simple bloody descriptions";
 			attr2 string "dsdsd" ;
 			attr3 string[4];
 		}
