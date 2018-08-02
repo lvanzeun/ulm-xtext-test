@@ -18,6 +18,18 @@ class UlmDsl2Formatter extends AbstractFormatter2 {
 
 	@Inject extension UlmDsl2GrammarAccess
 
+	def dispatch void format(Model model, extension IFormattableDocument document) {
+
+		interior(
+			model.regionFor.keyword(modelAccess.leftCurlyBracketKeyword_2).prepend[oneSpace].append[newLine],
+			model.regionFor.keyword(modelAccess.rightCurlyBracketKeyword_4).prepend[newLine]
+		)[indent]
+
+		for (Context context : model.getContexts()) {
+			context.format;
+		}
+	}
+
 	def dispatch void format(Context context, extension IFormattableDocument document) {
 
 		interior(
@@ -26,30 +38,58 @@ class UlmDsl2Formatter extends AbstractFormatter2 {
 		)[indent]
 
 		interior(
-			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_4_1),
-			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_4_3).append[newLine]
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_4_1).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_4_3).prepend[newLine]
 		)[indent]
-		context.regionFor.keyword("attributes").prepend[newLine].append[oneSpace]
+		context.regionFor.keyword("attributes")
 		for (Attribute attribute : context.getAttributes()) {
 			attribute.format;
 		}
-
+ 
 		interior(
-			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_5_1),
-			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_5_3).append[newLine]
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_5_1).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_5_3).prepend[newLine]
 		)[indent]
-		context.regionFor.keyword("lookups").prepend[newLine].append[oneSpace]
+		context.regionFor.keyword("lookups")
 		for (Lookup lookup : context.getLookups()) {
 			lookup.format;
 		}
 
 		interior(
-			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_6_1),
-			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_6_3).append[newLine]
+			context.regionFor.keyword(contextAccess.leftCurlyBracketKeyword_6_1).prepend[oneSpace].append[newLine],
+			context.regionFor.keyword(contextAccess.rightCurlyBracketKeyword_6_3).prepend[newLine]
 		)[indent]
-		context.regionFor.keyword("entities").prepend[newLine].append[oneSpace]
+		context.regionFor.keyword("entities")
 		for (Entity entity : context.getEntities()) {
 			entity.format;
 		}
 	}
+
+	def dispatch void format(Lookup lookup, extension IFormattableDocument document) {
+		lookup.regionFor.keyword(",").prepend[noSpace].append[newLine]
+	}
+
+	def dispatch void format(Entity entity, extension IFormattableDocument document) {
+		interior(
+			entity.regionFor.keyword(entityAccess.leftCurlyBracketKeyword_4).prepend[oneSpace].append[newLine],
+			entity.regionFor.keyword(entityAccess.rightCurlyBracketKeyword_6).prepend[newLine].append[newLine]
+		)[indent]
+
+		entity.regionFor.keyword("data").prepend[newLine]
+
+		for (Feature feature : entity.features) {
+			feature.format;
+		}
+	}
+
+	def dispatch void format(Attribute attribute, extension IFormattableDocument document) {
+		attribute.regionFor.keyword("attribute").prepend[newLine]
+		attribute.regionFor.keyword(";").append[newLine]
+	}
+
+	def dispatch void format(Feature feature, extension IFormattableDocument document) {
+		feature.regionFor.keyword("feature").prepend[newLine]
+		feature.regionFor.keyword(";").prepend[noSpace].append[newLine]
+	}
+
 }
