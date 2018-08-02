@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/ulm.xtext2.feature_1.0.0.201808011616.jar" id="ulm.xtext2.feature" version="1.0.0.201808011616"/>
+   <feature url="features/ulm.xtext2.feature_1.0.0.201808011616.jar" id="ulm.xtext2.feature" version="1.0.0.201808011616">
+      <category name="model_management"/>
+   </feature>
+   <category-def name="model_management" label="Model Management"/>
 </site>
